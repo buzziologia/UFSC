@@ -84,7 +84,6 @@ def main():
 
   dias_aluguel = int(input("Quantos dias você deseja alugar um carro? "))
 
-  loja = Loja()
   # Adicionar veículos à loja
 
   print("\nVeículos disponíveis para aluguel:")
@@ -112,7 +111,6 @@ def main():
       contrato.gerar_contrato()
 if __name__ == "__main__":
   main()
-
 
 ''' veiculos disponiveis e suas especificacoes'''
 
