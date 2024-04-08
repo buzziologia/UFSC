@@ -1,0 +1,1 @@
+Neste projeto se encontram diversos trabalhos realizados nas disciplinas de programação na Universidade Federal de Santa Catarina e pequenos trechos de códigos que eu acho necessário revisar com certa frequencia.
