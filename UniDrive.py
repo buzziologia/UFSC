@@ -120,7 +120,7 @@ veiculos = [
   {'marca': 'honda', 'modelo': 'crv', 'ano': 2018, 'direcao': 'manual', 'ar_condicionado': 'sim', 'cor': 'branco', 'motor': '1.0', 'local': 'centro', 'diaria': 100, 'codigo': 'HC8MSB0C'},
   {'marca': 'toyota', 'modelo': 'corolla', 'ano': 2019, 'direcao': 'manual', 'ar_condicionado': 'sim', 'cor': 'vermelho', 'motor': '1.6', 'local': 'centro', 'diaria': 180, 'codigo': 'TC019RH6C'},
   {'marca': 'toyota', 'modelo': 'hilux', 'ano': 2021, 'direcao': 'automatica', 'ar_condicionado': 'sim', 'cor': 'preto', 'motor': '2.4', 'local': 'centro', 'diaria': 250, 'codigo': 'TH021PM2C'},
-  {'marca': 'volkswagen', 'modelo': 'gol', 'ano': 2017, 'direcao': 'manual', 'ar_condicionado': 'sim', 'cor': 'prata', 'motor': '1.0', 'local': 'centro', 'diaria': 120, 'codigo': 'VG017PS0C'}
+  {'marca': 'volkswagen', 'modelo': 'gol', 'ano': 2017, 'direcao': 'manual', 'ar_condicionado': 'sim', 'cor': 'prata', 'motor': '1.0', 'local': 'centro', 'diaria': 120, 'codigo': 'VG017PS0C'},
   {'marca': 'chevrolet', 'modelo': 'cruze', 'ano': 2020, 'direcao': 'automatica', 'ar_condicionado': 'sim', 'cor': 'preto', 'motor': '1.8', 'local': 'trindade', 'diaria': 200, 'codigo': 'CC0ASP8T'},
   {'marca': 'chevrolet', 'modelo': 'cruze', 'ano': 2022, 'direcao': 'manual', 'ar_condicionado': 'sim', 'cor': 'branco', 'motor': '1.0', 'local': 'trindade', 'diaria': 150, 'codigo': 'CC2MSB0T'},
   {'marca': 'peugeot', 'modelo': '208', 'ano': 2018, 'direcao': 'manual', 'ar_condicionado': 'sim', 'cor': 'azul', 'motor': '1.0', 'local': 'trindade', 'diaria': 100, 'codigo': 'P28MSA0T'},
@@ -285,4 +285,3 @@ while try_again:
         contrato = Contrato(cliente_dados, veiculo_escolhido, dias_aluguel)
         contrato.gerar_contrato()
         print("Contrato gerado com sucesso!")
-
