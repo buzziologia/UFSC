@@ -78,7 +78,7 @@ class Contrato:
   def gerar_contrato(self):
       seguro, limpeza, valor_total = self.calcular_valor_total()
 
-      
+
       print("---------------------------------------- CONTRATO ALUGUEL UNIDRIVE ---------------------------------------")
       print()
       if isinstance(self.cliente, dict):
@@ -163,18 +163,18 @@ while try_again:
             inserir_senha = input("Insira a senha para continuar: ")
             if inserir_senha == "1234" or inserir_senha == "4321":
                 print("Senha correta. Acesso concedido.")
-                marca = input("Digite a marca do veículo: ")
-                modelo = input("Digite o modelo do veículo: ")
-                ano = input("Digite o ano do veículo: ")
-                direcao = input("Digite a direção do veículo: ")
-                ar_condicionado = input("O veículo possui ar-condicionado? (sim ou não): ")
-                cor = input("Digite a cor do veículo: ")
-                motor = input("Digite o motor do veículo: ")
-                local = input("Digite a unidade da locadora do veículo: ")
-                diaria = int(input("Digite o valor da diária do veículo: "))
-                codigo = input("Digite o código do veículo: ")
-                veiculo = Veiculo(marca, modelo, ano, direcao, ar_condicionado, cor, motor, local, diaria, codigo)
-                loja.adicionar_veiculo(veiculo)
+                ad_marca = input("Digite a marca do veículo: ")
+                ad_modelo = input("Digite o modelo do veículo: ")
+                ad_ano = input("Digite o ano do veículo: ")
+                ad_direcao = input("Digite a direção do veículo: ")
+                ad_ar_condicionado = input("O veículo possui ar-condicionado? (sim ou não): ")
+                ad_cor = input("Digite a cor do veículo: ")
+                ad_motor = input("Digite o motor do veículo: ")
+                ad_local = input("Digite a unidade da locadora do veículo: ")
+                ad_diaria = int(input("Digite o valor da diária do veículo: "))
+                ad_codigo = input("Digite o código do veículo: ")
+                ad_veiculo = Veiculo(ad_marca, ad_modelo, ad_ano, ad_direcao, ad_ar_condicionado, ad_cor, ad_motor, ad_local, ad_diaria, ad_codigo)
+                loja.adicionar_veiculo(ad_veiculo)
                 print("Veículo cadastrado com sucesso!")
 
                 print()
@@ -227,6 +227,8 @@ while try_again:
         # Convertendo o ano para int se não estiver vazio
         if filtro_ano:
             filtro_ano = int(filtro_ano)
+        if filtro_diaria:
+            filtro_diaria = int(filtro_diaria)
 
 
 
@@ -313,9 +315,7 @@ while try_again:
             print("Contrato gerado com sucesso!")
             print()
             print(f"Obrigado por usar nosso app, {nome}! Volte sempre.")
-          
+
     else:
         print("Opção inválida. Tente novamente.")
         try_again = True
-
-
