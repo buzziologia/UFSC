@@ -27,8 +27,10 @@ begin
 		nextState <= currentState;
 		case currentState is
 			when L01 =>
-				nextState <=  ;
+				if iniciar = '1' then
+					nextState <= L02;
 			when L02 =>
+				if STTIleqN 
 				nextState <=  ;
 			when L03 =>
 				nextState <=  ;
@@ -41,7 +43,9 @@ begin
 			when L07 =>
 				nextState <=  ;
 			when L08 =>
-				nextState <=  ;
+				if sttIleqN = '1' then
+					nextState <= L09
+				else 
 			when L09 =>
 				nextState <=  ;
 			when L10 =>
