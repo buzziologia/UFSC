@@ -18,15 +18,15 @@
 -- Saidas: int nElemento
 -- 
 -- Operações: 
--- L02:	n<=2; 								==> sttNlt2
--- L04: 	i = 3; 								==> cmdI3
--- L05:	primeiro = 1;						==> cmdPrim1
--- L06: 	segundo = 1;						==> cmdSeg1
--- L08:	i<=n;									==> sttIleqN
--- L09:	soma = primeiro + segundo;		==> cmdSomaPrimPlusSeg	
--- l10:	primeiro = segundo;				==> cmdPrimSeg
--- L11:	segundo = soma;					==> cmdSegSoma
--- L12:	i++									==> cmdIinc
+-- L02:	n<=2; 								      ==> sttNlt2
+-- L04: 	i = 3; 								    ==> cmdI3
+-- L05:	primeiro = 1;						    ==> cmdPrim1
+-- L06: 	segundo = 1;						  ==> cmdSeg1
+-- L08:	i<=n;									      ==> sttIleqN
+-- L09:	soma = primeiro + segundo;	==> cmdSomaPrimPlusSeg	
+-- l10:	primeiro = segundo;				  ==> cmdPrimSeg
+-- L11:	segundo = soma;					    ==> cmdSegSoma
+-- L12:	i++									        ==> cmdIinc
 
 
 library ieee;
