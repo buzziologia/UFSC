@@ -1,0 +1,22 @@
+{
+    "grupo": {
+        "nome": "grupo 1",
+        "alunos": [{"nome": "um nome", "matricula": "08132023"}]
+    },
+    "fpga": {
+        "familia": "familia",
+        "dispositivo": "dispositivo"
+    },
+    "utilizacao": {
+        "total combinational functions": 123,
+        "dedicated logic registers": 12,
+        "total pins": 5
+    },
+    "atraso": {
+        "input port": "in",
+        "output port": "out",
+        "atraso": 2.5,
+        "unidade": "ns",
+        "tipo de atraso": "RR"
+    }
+}
