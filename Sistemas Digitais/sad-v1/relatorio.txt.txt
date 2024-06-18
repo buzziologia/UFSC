@@ -1,0 +1,12 @@
+--------------- dados do aluno ---------------
+nome: Jonatan Felipe Hartmann e Lucas Tomio Schwchow
+matricula: 23104231 23250585
+--------------- dados do fpga ----------------
+familia: Cyclone III
+dispositivo:EP3C5E144C7
+-------- dados de utilizacao da placa --------
+total combinational functions: 45
+dedicates logic registers: 57
+total pins: 41
+-------------- dados de atraso ---------------
+Fmax (MHz): 162.13 MHz

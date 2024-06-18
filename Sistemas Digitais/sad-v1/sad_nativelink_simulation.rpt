@@ -1,0 +1,104 @@
+Info: Start Nativelink Simulation process
+
+========= EDA Simulation Settings =====================
+
+Sim Mode              :  Gate
+Family                :  cycloneii
+Quartus root          :  /opt/altera/13.0sp1/quartus/linux64/
+Quartus sim root      :  /opt/altera/13.0sp1/quartus/eda/sim_lib
+Simulation Tool       :  modelsim-altera
+Simulation Language   :  vhdl
+Version               :  93
+Simulation Mode       :  GUI
+Sim Output File       :  sad.vho
+Sim SDF file          :  sad__vhdl.sdo
+Sim dir               :  simulation/modelsim
+
+=======================================================
+
+Info: Starting NativeLink simulation with ModelSim-Altera software
+Sourced NativeLink script /opt/altera/13.0sp1/quartus/common/tcl/internal/nativelink/modelsim.tcl
+Warning: File sad_run_msim_gate_vhdl.do already exists - backing up current file as sad_run_msim_gate_vhdl.do.bak5
+Probing transcript
+ModelSim-Altera Info: # do sad_run_msim_gate_vhdl.do 
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Copying /opt/altera/13.0sp1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied /opt/altera/13.0sp1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {sad.vho}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package cycloneii_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneii_components
+ModelSim-Altera Info: # -- Compiling entity sad
+ModelSim-Altera Info: # -- Compiling architecture structure of sad
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vcom -93 -work work {/home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/testbench.vhd}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Loading package STANDARD
+ModelSim-Altera Info: # -- Loading package TEXTIO
+ModelSim-Altera Info: # -- Loading package std_logic_1164
+ModelSim-Altera Info: # -- Loading package MATH_REAL
+ModelSim-Altera Info: # -- Loading package NUMERIC_STD
+ModelSim-Altera Info: # -- Compiling entity testbench
+ModelSim-Altera Info: # -- Compiling architecture tb of testbench
+ModelSim-Altera Info: # -- Loading package VITAL_Timing
+ModelSim-Altera Info: # -- Loading package VITAL_Primitives
+ModelSim-Altera Info: # -- Loading package cycloneii_atom_pack
+ModelSim-Altera Info: # -- Loading package cycloneii_components
+ModelSim-Altera Info: # -- Loading entity sad
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps +transport_int_delays +transport_path_delays -sdftyp /DUT=sad_vhd.sdo -L cycloneii -L gate_work -L work -voptargs="+acc"  testbench
+ModelSim-Altera Info: # vsim +transport_int_delays +transport_path_delays -L cycloneii -L gate_work -L work -voptargs=\"+acc\" -sdftyp /DUT=sad_vhd.sdo -t 1ps testbench 
+ModelSim-Altera Info: # Loading std.standard
+ModelSim-Altera Info: # Loading std.textio(body)
+ModelSim-Altera Info: # Loading ieee.std_logic_1164(body)
+ModelSim-Altera Info: # Loading ieee.math_real(body)
+ModelSim-Altera Info: # Loading ieee.numeric_std(body)
+ModelSim-Altera Info: # Loading ieee.vital_timing(body)
+ModelSim-Altera Info: # Loading ieee.vital_primitives(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_atom_pack(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_components
+ModelSim-Altera Info: # Loading work.testbench(tb)
+ModelSim-Altera Info: # SDF 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # Loading work.sad(structure)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_routing_wire(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_and1(altvital)
+ModelSim-Altera Info: # Loading ieee.std_logic_arith(body)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_io(structure)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_mux21(altvital)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_dffe(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_asynch_io(behave)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)
+ModelSim-Altera Info: # Loading cycloneii.cycloneii_ena_reg(behave)
+ModelSim-Altera Info: # Loading instances from sad_vhd.sdo
+ModelSim-Altera Info: # Loading timing data from sad_vhd.sdo
+ModelSim-Altera Warning: # ** Warning: Design size of 4 instances exceeds ModelSim ALTERA recommended capacity.
+ModelSim-Altera Info: # This may because you are loading cell libraries which are not recommended with
+ModelSim-Altera Info: # the ModelSim Altera version. Expect performance to be adversely affected.
+ModelSim-Altera Info: # ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+ModelSim-Altera Info: #    Time: 0 ps  Iteration: 0  Instance: /testbench File: /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/testbench.vhd
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # add wave *
+ModelSim-Altera Info: # view structure
+ModelSim-Altera Info: # .main_pane.structure.interior.cs.body.struct
+ModelSim-Altera Info: # view signals
+ModelSim-Altera Info: # .main_pane.objects.interior.cs.body.tree
+ModelSim-Altera Info: # run 1 sec
+ModelSim-Altera Info: # ** Note: Test done.
+ModelSim-Altera Info: #    Time: 4010 ns  Iteration: 0  Instance: /testbench
+ModelSim-Altera Info: # Break key hit 
+ModelSim-Altera Info: # Simulation stop requested.
+Info: NativeLink simulation flow was successful

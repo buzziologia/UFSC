@@ -1,0 +1,519 @@
+Analysis & Synthesis report for sad
+Sat May 11 21:04:09 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |sad|sad_controle:bc|EstadoAtual
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |sad
+ 11. Parameter Settings for User Entity Instance: sad_operativo:bo
+ 12. Parameter Settings for User Entity Instance: sad_operativo:bo|mux2para1:mux_i
+ 13. Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_i
+ 14. Parameter Settings for User Entity Instance: sad_operativo:bo|somador:sum_i
+ 15. Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_pA
+ 16. Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_pB
+ 17. Parameter Settings for User Entity Instance: sad_operativo:bo|subtrator:sub
+ 18. Parameter Settings for User Entity Instance: sad_operativo:bo|absolute:absol
+ 19. Parameter Settings for User Entity Instance: sad_operativo:bo|somador:sum_sad
+ 20. Parameter Settings for User Entity Instance: sad_operativo:bo|mux2para1:mux_soma
+ 21. Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_soma
+ 22. Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_sad
+ 23. Port Connectivity Checks: "sad_operativo:bo|mux2para1:mux_soma"
+ 24. Port Connectivity Checks: "sad_operativo:bo|somador:sum_sad"
+ 25. Port Connectivity Checks: "sad_operativo:bo|subtrator:sub"
+ 26. Port Connectivity Checks: "sad_operativo:bo|somador:sum_i"
+ 27. Port Connectivity Checks: "sad_operativo:bo|mux2para1:mux_i"
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat May 11 21:04:09 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; sad                                             ;
+; Top-level Entity Name              ; sad                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 76                                              ;
+;     Total combinational functions  ; 45                                              ;
+;     Dedicated logic registers      ; 57                                              ;
+; Total registers                    ; 57                                              ;
+; Total pins                         ; 41                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5AF256A7       ;                    ;
+; Top-level entity name                                                      ; sad                ; sad                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; subtrator.vhd                    ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/subtrator.vhd     ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/somador.vhd       ;         ;
+; sad_operativo.vhd                ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/sad_operativo.vhd ;         ;
+; sad_controle.vhd                 ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/sad_controle.vhd  ;         ;
+; sad.vhd                          ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/sad.vhd           ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/registrador.vhd   ;         ;
+; mux2para1.vhd                    ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/mux2para1.vhd     ;         ;
+; absolute.vhd                     ; yes             ; User VHDL File  ; /home/jonatan/Documentos/UFSC/MONITORIA_SD/AP2/my/separado/sad-v1/absolute.vhd      ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 76    ;
+;                                             ;       ;
+; Total combinational functions               ; 45    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 26    ;
+;     -- <=2 input functions                  ; 19    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 10    ;
+;     -- arithmetic mode                      ; 35    ;
+;                                             ;       ;
+; Total registers                             ; 57    ;
+;     -- Dedicated logic registers            ; 57    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 41    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 57    ;
+; Total fan-out                               ; 323   ;
+; Average fan-out                             ; 2.26  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+; Compilation Hierarchy Node   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Library Name ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+; |sad                         ; 45 (0)            ; 57 (0)       ; 0           ; 0            ; 0       ; 0         ; 41   ; 0            ; |sad                                       ; work         ;
+;    |sad_controle:bc|         ; 5 (5)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_controle:bc                       ; work         ;
+;    |sad_operativo:bo|        ; 40 (0)            ; 51 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo                      ; work         ;
+;       |absolute:absol|       ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|absolute:absol       ; work         ;
+;       |registrador:reg_i|    ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|registrador:reg_i    ; work         ;
+;       |registrador:reg_pA|   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|registrador:reg_pA   ; work         ;
+;       |registrador:reg_pB|   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|registrador:reg_pB   ; work         ;
+;       |registrador:reg_sad|  ; 0 (0)             ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|registrador:reg_sad  ; work         ;
+;       |registrador:reg_soma| ; 14 (14)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|registrador:reg_soma ; work         ;
+;       |subtrator:sub|        ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sad|sad_operativo:bo|subtrator:sub        ; work         ;
++------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |sad|sad_controle:bc|EstadoAtual                                                                     ;
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+; Name           ; EstadoAtual.S5 ; EstadoAtual.S4 ; EstadoAtual.S3 ; EstadoAtual.S2 ; EstadoAtual.S1 ; EstadoAtual.S0 ;
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+; EstadoAtual.S0 ; 0              ; 0              ; 0              ; 0              ; 0              ; 0              ;
+; EstadoAtual.S1 ; 0              ; 0              ; 0              ; 0              ; 1              ; 1              ;
+; EstadoAtual.S2 ; 0              ; 0              ; 0              ; 1              ; 0              ; 1              ;
+; EstadoAtual.S3 ; 0              ; 0              ; 1              ; 0              ; 0              ; 1              ;
+; EstadoAtual.S4 ; 0              ; 1              ; 0              ; 0              ; 0              ; 1              ;
+; EstadoAtual.S5 ; 1              ; 0              ; 0              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+----------------+----------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 57    ;
+; Number of registers using Synchronous Clear  ; 21    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 51    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |sad ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; B              ; 8     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; b              ; 8     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|mux2para1:mux_i ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; n              ; 7     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_i ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 7     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|somador:sum_i ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 6     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_pA ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_pB ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|subtrator:sub ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 9     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|absolute:absol ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; n              ; 9     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|somador:sum_sad ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; n              ; 14    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|mux2para1:mux_soma ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; n              ; 14    ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_soma ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; n              ; 14    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: sad_operativo:bo|registrador:reg_sad ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 14    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "sad_operativo:bo|mux2para1:mux_soma" ;
++------+-------+----------+---------------------------------------+
+; Port ; Type  ; Severity ; Details                               ;
++------+-------+----------+---------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                          ;
++------+-------+----------+---------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "sad_operativo:bo|somador:sum_sad"                                                          ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; add2[13..9] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; sum[14]     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "sad_operativo:bo|subtrator:sub" ;
++---------+-------+----------+-------------------------------+
+; Port    ; Type  ; Severity ; Details                       ;
++---------+-------+----------+-------------------------------+
+; sub1[8] ; Input ; Info     ; Stuck at GND                  ;
+; sub2[8] ; Input ; Info     ; Stuck at GND                  ;
++---------+-------+----------+-------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "sad_operativo:bo|somador:sum_i" ;
++------------+-------+----------+----------------------------+
+; Port       ; Type  ; Severity ; Details                    ;
++------------+-------+----------+----------------------------+
+; add2[5..1] ; Input ; Info     ; Stuck at GND               ;
+; add2[0]    ; Input ; Info     ; Stuck at VCC               ;
++------------+-------+----------+----------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "sad_operativo:bo|mux2para1:mux_i" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; b    ; Input ; Info     ; Stuck at GND                       ;
++------+-------+----------+------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat May 11 21:04:03 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sad -c sad
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file testbench.vhd
+    Info (12022): Found design unit 1: testbench-tb
+    Info (12023): Found entity 1: testbench
+Info (12021): Found 2 design units, including 1 entities, in source file subtrator.vhd
+    Info (12022): Found design unit 1: subtrator-rtl
+    Info (12023): Found entity 1: subtrator
+Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
+    Info (12022): Found design unit 1: somador-rtl
+    Info (12023): Found entity 1: somador
+Info (12021): Found 2 design units, including 1 entities, in source file sad_operativo.vhd
+    Info (12022): Found design unit 1: sad_operativo-rtl
+    Info (12023): Found entity 1: sad_operativo
+Info (12021): Found 2 design units, including 1 entities, in source file sad_controle.vhd
+    Info (12022): Found design unit 1: sad_controle-rtl
+    Info (12023): Found entity 1: sad_controle
+Info (12021): Found 2 design units, including 1 entities, in source file sad.vhd
+    Info (12022): Found design unit 1: sad-rtl
+    Info (12023): Found entity 1: sad
+Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
+    Info (12022): Found design unit 1: registrador-comportamento
+    Info (12023): Found entity 1: registrador
+Info (12021): Found 2 design units, including 1 entities, in source file mux2para1.vhd
+    Info (12022): Found design unit 1: mux2para1-comportamento
+    Info (12023): Found entity 1: mux2para1
+Info (12021): Found 2 design units, including 1 entities, in source file absolute.vhd
+    Info (12022): Found design unit 1: absolute-rtl
+    Info (12023): Found entity 1: absolute
+Info (12127): Elaborating entity "sad" for the top level hierarchy
+Info (12128): Elaborating entity "sad_operativo" for hierarchy "sad_operativo:bo"
+Info (12128): Elaborating entity "mux2para1" for hierarchy "sad_operativo:bo|mux2para1:mux_i"
+Info (12128): Elaborating entity "registrador" for hierarchy "sad_operativo:bo|registrador:reg_i"
+Info (12128): Elaborating entity "somador" for hierarchy "sad_operativo:bo|somador:sum_i"
+Info (12128): Elaborating entity "registrador" for hierarchy "sad_operativo:bo|registrador:reg_pA"
+Info (12128): Elaborating entity "subtrator" for hierarchy "sad_operativo:bo|subtrator:sub"
+Info (12128): Elaborating entity "absolute" for hierarchy "sad_operativo:bo|absolute:absol"
+Info (12128): Elaborating entity "somador" for hierarchy "sad_operativo:bo|somador:sum_sad"
+Info (12128): Elaborating entity "mux2para1" for hierarchy "sad_operativo:bo|mux2para1:mux_soma"
+Info (12128): Elaborating entity "registrador" for hierarchy "sad_operativo:bo|registrador:reg_soma"
+Info (12128): Elaborating entity "sad_controle" for hierarchy "sad_controle:bc"
+Warning (10492): VHDL Process Statement warning at sad_controle.vhd(28): signal "menor" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 118 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 77 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 606 megabytes
+    Info: Processing ended: Sat May 11 21:04:09 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:07
+
+

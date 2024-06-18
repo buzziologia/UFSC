@@ -1,0 +1,1311 @@
+TimeQuest Timing Analyzer report for sad
+Sat May 11 21:04:48 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clk'
+ 24. Fast Model Hold: 'clk'
+ 25. Fast Model Minimum Pulse Width: 'clk'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; sad                                                               ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5AF256A7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 132.66 MHz ; 132.66 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -6.538 ; -119.608      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.460 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.631 ; -71.285               ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                               ;
++--------+------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -6.538 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.577      ;
+; -6.500 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.539      ;
+; -6.456 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.495      ;
+; -6.418 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.457      ;
+; -6.374 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.413      ;
+; -6.336 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.375      ;
+; -6.292 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.331      ;
+; -6.292 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.331      ;
+; -6.254 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.293      ;
+; -6.220 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.259      ;
+; -6.210 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.249      ;
+; -6.210 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.249      ;
+; -6.183 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.222      ;
+; -6.174 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.213      ;
+; -6.172 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.211      ;
+; -6.138 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.177      ;
+; -6.138 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.177      ;
+; -6.128 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.167      ;
+; -6.128 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.167      ;
+; -6.127 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.166      ;
+; -6.101 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.140      ;
+; -6.093 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.132      ;
+; -6.092 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.131      ;
+; -6.090 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.129      ;
+; -6.060 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.099      ;
+; -6.056 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.095      ;
+; -6.056 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.095      ;
+; -6.046 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.085      ;
+; -6.045 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.084      ;
+; -6.020 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.059      ;
+; -6.019 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.058      ;
+; -6.011 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.050      ;
+; -6.010 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.049      ;
+; -5.978 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.017      ;
+; -5.974 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.013      ;
+; -5.974 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.013      ;
+; -5.974 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.013      ;
+; -5.964 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 7.003      ;
+; -5.963 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 7.002      ;
+; -5.948 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.987      ;
+; -5.938 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.977      ;
+; -5.937 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.976      ;
+; -5.929 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.968      ;
+; -5.928 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.967      ;
+; -5.910 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.949      ;
+; -5.896 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.935      ;
+; -5.892 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.931      ;
+; -5.892 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.931      ;
+; -5.892 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.931      ;
+; -5.882 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.921      ;
+; -5.881 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.920      ;
+; -5.856 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.895      ;
+; -5.855 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.894      ;
+; -5.848 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.887      ;
+; -5.847 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.886      ;
+; -5.846 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.885      ;
+; -5.814 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.853      ;
+; -5.813 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.852      ;
+; -5.810 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.849      ;
+; -5.810 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.849      ;
+; -5.810 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.849      ;
+; -5.799 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.838      ;
+; -5.781 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.820      ;
+; -5.778 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.817      ;
+; -5.774 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.813      ;
+; -5.773 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.812      ;
+; -5.766 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.805      ;
+; -5.765 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.804      ;
+; -5.764 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.803      ;
+; -5.740 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.779      ;
+; -5.735 ; sad_operativo:bo|registrador:reg_pA|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.774      ;
+; -5.732 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.771      ;
+; -5.731 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.770      ;
+; -5.728 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.767      ;
+; -5.728 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.767      ;
+; -5.717 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.756      ;
+; -5.702 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.741      ;
+; -5.699 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.738      ;
+; -5.696 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.735      ;
+; -5.692 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.731      ;
+; -5.684 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.723      ;
+; -5.683 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.722      ;
+; -5.658 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.697      ;
+; -5.653 ; sad_operativo:bo|registrador:reg_pA|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.692      ;
+; -5.650 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.689      ;
+; -5.649 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.688      ;
+; -5.646 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.685      ;
+; -5.630 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.669      ;
+; -5.617 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.656      ;
+; -5.614 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.653      ;
+; -5.610 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.649      ;
+; -5.602 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.641      ;
+; -5.593 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.632      ;
+; -5.584 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.623      ;
+; -5.576 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.615      ;
+; -5.571 ; sad_operativo:bo|registrador:reg_pA|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.610      ;
+; -5.567 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 6.606      ;
+; -5.564 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.603      ;
+; -5.548 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.587      ;
+; -5.537 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 6.576      ;
++--------+------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                  ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.460 ; sad_controle:bc|EstadoAtual.S0              ; sad_controle:bc|EstadoAtual.S0              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.643 ; sad_operativo:bo|registrador:reg_soma|Q[13] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.939      ;
+; 0.654 ; sad_operativo:bo|registrador:reg_i|Q[6]     ; sad_controle:bc|EstadoAtual.S3              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.950      ;
+; 0.655 ; sad_operativo:bo|registrador:reg_i|Q[6]     ; sad_controle:bc|EstadoAtual.S5              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.951      ;
+; 0.656 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_sad|Q[9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.952      ;
+; 0.658 ; sad_controle:bc|EstadoAtual.S3              ; sad_controle:bc|EstadoAtual.S4              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.954      ;
+; 0.766 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_sad|Q[8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.803 ; sad_controle:bc|EstadoAtual.S2              ; sad_controle:bc|EstadoAtual.S5              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.099      ;
+; 0.806 ; sad_controle:bc|EstadoAtual.S2              ; sad_controle:bc|EstadoAtual.S3              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.102      ;
+; 0.810 ; sad_controle:bc|EstadoAtual.S0              ; sad_controle:bc|EstadoAtual.S1              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.106      ;
+; 0.881 ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; sad_operativo:bo|registrador:reg_sad|Q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.177      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.952 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.248      ;
+; 0.956 ; sad_controle:bc|EstadoAtual.S5              ; sad_controle:bc|EstadoAtual.S0              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.252      ;
+; 1.002 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.298      ;
+; 1.007 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.303      ;
+; 1.010 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.306      ;
+; 1.011 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.307      ;
+; 1.012 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.012 ; sad_operativo:bo|registrador:reg_i|Q[4]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.012 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.308      ;
+; 1.017 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.313      ;
+; 1.035 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_sad|Q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.331      ;
+; 1.048 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.344      ;
+; 1.049 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.345      ;
+; 1.054 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.350      ;
+; 1.057 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.057 ; sad_operativo:bo|registrador:reg_i|Q[5]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.057 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.057 ; sad_operativo:bo|registrador:reg_soma|Q[12] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.353      ;
+; 1.165 ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; sad_operativo:bo|registrador:reg_sad|Q[7]   ; clk          ; clk         ; 0.000        ; -0.007     ; 1.454      ;
+; 1.199 ; sad_operativo:bo|registrador:reg_soma|Q[12] ; sad_operativo:bo|registrador:reg_sad|Q[12]  ; clk          ; clk         ; 0.000        ; -0.007     ; 1.488      ;
+; 1.202 ; sad_operativo:bo|registrador:reg_soma|Q[13] ; sad_operativo:bo|registrador:reg_sad|Q[13]  ; clk          ; clk         ; 0.000        ; -0.007     ; 1.491      ;
+; 1.206 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_sad|Q[5]   ; clk          ; clk         ; 0.000        ; -0.007     ; 1.495      ;
+; 1.207 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_sad|Q[10]  ; clk          ; clk         ; 0.000        ; -0.007     ; 1.496      ;
+; 1.211 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_sad|Q[0]   ; clk          ; clk         ; 0.000        ; -0.007     ; 1.500      ;
+; 1.211 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_sad|Q[1]   ; clk          ; clk         ; 0.000        ; -0.007     ; 1.500      ;
+; 1.216 ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.512      ;
+; 1.232 ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; sad_operativo:bo|registrador:reg_sad|Q[4]   ; clk          ; clk         ; 0.000        ; -0.007     ; 1.521      ;
+; 1.279 ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.575      ;
+; 1.294 ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.349 ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; sad_operativo:bo|registrador:reg_sad|Q[2]   ; clk          ; clk         ; 0.000        ; -0.007     ; 1.638      ;
+; 1.357 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_sad|Q[11]  ; clk          ; clk         ; 0.000        ; -0.007     ; 1.646      ;
+; 1.449 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.745      ;
+; 1.454 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.750      ;
+; 1.458 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.754      ;
+; 1.459 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.755      ;
+; 1.459 ; sad_operativo:bo|registrador:reg_i|Q[4]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.755      ;
+; 1.459 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.755      ;
+; 1.462 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.758      ;
+; 1.464 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.760      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.484 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.005      ; 1.785      ;
+; 1.496 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.792      ;
+; 1.497 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.793      ;
+; 1.500 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.796      ;
+; 1.505 ; sad_operativo:bo|registrador:reg_i|Q[5]     ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.505 ; sad_operativo:bo|registrador:reg_soma|Q[12] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.505 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.505 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.801      ;
+; 1.506 ; sad_controle:bc|EstadoAtual.S1              ; sad_controle:bc|EstadoAtual.S2              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.802      ;
+; 1.526 ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.822      ;
+; 1.531 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.827      ;
+; 1.536 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.832      ;
+; 1.540 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.836      ;
+; 1.541 ; sad_operativo:bo|registrador:reg_i|Q[4]     ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.541 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.541 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.837      ;
+; 1.544 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.840      ;
+; 1.546 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.842      ;
+; 1.578 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.874      ;
+; 1.579 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.875      ;
+; 1.582 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.878      ;
+; 1.587 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.587 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.883      ;
+; 1.599 ; sad_controle:bc|EstadoAtual.S4              ; sad_controle:bc|EstadoAtual.S2              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.895      ;
+; 1.613 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.909      ;
+; 1.618 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.914      ;
+; 1.622 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.918      ;
+; 1.623 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 1.919      ;
+; 1.623 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.919      ;
+; 1.626 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.922      ;
+; 1.653 ; sad_controle:bc|EstadoAtual.S5              ; sad_operativo:bo|registrador:reg_sad|Q[0]   ; clk          ; clk         ; 0.000        ; -0.002     ; 1.947      ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; clk   ; Rise       ; clk                                         ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S0              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S0              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S1              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S1              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S2              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S2              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S3              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S3              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S4              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S4              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S5              ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S5              ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[0]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[1]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[2]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[3]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[4]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[5]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[5]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[6]     ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[6]     ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[0]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[1]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[2]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[3]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[4]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[5]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[6]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[7]    ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[0]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[10]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[10]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[11]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[11]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[12]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[12]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[13]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[13]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[1]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[2]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[3]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[4]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[5]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[6]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[6]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[7]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[8]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[8]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[9]   ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[9]   ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[0]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[10] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[11] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[12] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[13] ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[1]  ;
+; -0.611 ; 0.500        ; 1.111          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[2]  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Mem_A[*]  ; clk        ; 4.316 ; 4.316 ; Rise       ; clk             ;
+;  Mem_A[0] ; clk        ; 4.289 ; 4.289 ; Rise       ; clk             ;
+;  Mem_A[1] ; clk        ; 0.238 ; 0.238 ; Rise       ; clk             ;
+;  Mem_A[2] ; clk        ; 4.260 ; 4.260 ; Rise       ; clk             ;
+;  Mem_A[3] ; clk        ; 4.305 ; 4.305 ; Rise       ; clk             ;
+;  Mem_A[4] ; clk        ; 4.283 ; 4.283 ; Rise       ; clk             ;
+;  Mem_A[5] ; clk        ; 4.275 ; 4.275 ; Rise       ; clk             ;
+;  Mem_A[6] ; clk        ; 4.316 ; 4.316 ; Rise       ; clk             ;
+;  Mem_A[7] ; clk        ; 4.304 ; 4.304 ; Rise       ; clk             ;
+; Mem_B[*]  ; clk        ; 4.243 ; 4.243 ; Rise       ; clk             ;
+;  Mem_B[0] ; clk        ; 4.108 ; 4.108 ; Rise       ; clk             ;
+;  Mem_B[1] ; clk        ; 0.234 ; 0.234 ; Rise       ; clk             ;
+;  Mem_B[2] ; clk        ; 3.892 ; 3.892 ; Rise       ; clk             ;
+;  Mem_B[3] ; clk        ; 4.167 ; 4.167 ; Rise       ; clk             ;
+;  Mem_B[4] ; clk        ; 3.944 ; 3.944 ; Rise       ; clk             ;
+;  Mem_B[5] ; clk        ; 4.243 ; 4.243 ; Rise       ; clk             ;
+;  Mem_B[6] ; clk        ; 4.168 ; 4.168 ; Rise       ; clk             ;
+;  Mem_B[7] ; clk        ; 4.150 ; 4.150 ; Rise       ; clk             ;
+; iniciar   ; clk        ; 4.249 ; 4.249 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Mem_A[*]  ; clk        ; 0.019  ; 0.019  ; Rise       ; clk             ;
+;  Mem_A[0] ; clk        ; -4.032 ; -4.032 ; Rise       ; clk             ;
+;  Mem_A[1] ; clk        ; 0.019  ; 0.019  ; Rise       ; clk             ;
+;  Mem_A[2] ; clk        ; -4.003 ; -4.003 ; Rise       ; clk             ;
+;  Mem_A[3] ; clk        ; -4.048 ; -4.048 ; Rise       ; clk             ;
+;  Mem_A[4] ; clk        ; -4.026 ; -4.026 ; Rise       ; clk             ;
+;  Mem_A[5] ; clk        ; -4.018 ; -4.018 ; Rise       ; clk             ;
+;  Mem_A[6] ; clk        ; -4.059 ; -4.059 ; Rise       ; clk             ;
+;  Mem_A[7] ; clk        ; -4.047 ; -4.047 ; Rise       ; clk             ;
+; Mem_B[*]  ; clk        ; 0.023  ; 0.023  ; Rise       ; clk             ;
+;  Mem_B[0] ; clk        ; -3.851 ; -3.851 ; Rise       ; clk             ;
+;  Mem_B[1] ; clk        ; 0.023  ; 0.023  ; Rise       ; clk             ;
+;  Mem_B[2] ; clk        ; -3.635 ; -3.635 ; Rise       ; clk             ;
+;  Mem_B[3] ; clk        ; -3.910 ; -3.910 ; Rise       ; clk             ;
+;  Mem_B[4] ; clk        ; -3.687 ; -3.687 ; Rise       ; clk             ;
+;  Mem_B[5] ; clk        ; -3.986 ; -3.986 ; Rise       ; clk             ;
+;  Mem_B[6] ; clk        ; -3.911 ; -3.911 ; Rise       ; clk             ;
+;  Mem_B[7] ; clk        ; -3.893 ; -3.893 ; Rise       ; clk             ;
+; iniciar   ; clk        ; -3.991 ; -3.991 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; endereco[*]  ; clk        ; 7.102 ; 7.102 ; Rise       ; clk             ;
+;  endereco[0] ; clk        ; 6.777 ; 6.777 ; Rise       ; clk             ;
+;  endereco[1] ; clk        ; 6.782 ; 6.782 ; Rise       ; clk             ;
+;  endereco[2] ; clk        ; 7.050 ; 7.050 ; Rise       ; clk             ;
+;  endereco[3] ; clk        ; 6.783 ; 6.783 ; Rise       ; clk             ;
+;  endereco[4] ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  endereco[5] ; clk        ; 7.102 ; 7.102 ; Rise       ; clk             ;
+; pronto       ; clk        ; 7.081 ; 7.081 ; Rise       ; clk             ;
+; read_mem     ; clk        ; 7.563 ; 7.563 ; Rise       ; clk             ;
+; sad_out[*]   ; clk        ; 7.349 ; 7.349 ; Rise       ; clk             ;
+;  sad_out[0]  ; clk        ; 7.038 ; 7.038 ; Rise       ; clk             ;
+;  sad_out[1]  ; clk        ; 6.792 ; 6.792 ; Rise       ; clk             ;
+;  sad_out[2]  ; clk        ; 6.791 ; 6.791 ; Rise       ; clk             ;
+;  sad_out[3]  ; clk        ; 7.011 ; 7.011 ; Rise       ; clk             ;
+;  sad_out[4]  ; clk        ; 7.035 ; 7.035 ; Rise       ; clk             ;
+;  sad_out[5]  ; clk        ; 6.761 ; 6.761 ; Rise       ; clk             ;
+;  sad_out[6]  ; clk        ; 7.174 ; 7.174 ; Rise       ; clk             ;
+;  sad_out[7]  ; clk        ; 7.327 ; 7.327 ; Rise       ; clk             ;
+;  sad_out[8]  ; clk        ; 6.778 ; 6.778 ; Rise       ; clk             ;
+;  sad_out[9]  ; clk        ; 6.775 ; 6.775 ; Rise       ; clk             ;
+;  sad_out[10] ; clk        ; 7.080 ; 7.080 ; Rise       ; clk             ;
+;  sad_out[11] ; clk        ; 7.349 ; 7.349 ; Rise       ; clk             ;
+;  sad_out[12] ; clk        ; 7.048 ; 7.048 ; Rise       ; clk             ;
+;  sad_out[13] ; clk        ; 7.078 ; 7.078 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; endereco[*]  ; clk        ; 6.777 ; 6.777 ; Rise       ; clk             ;
+;  endereco[0] ; clk        ; 6.777 ; 6.777 ; Rise       ; clk             ;
+;  endereco[1] ; clk        ; 6.782 ; 6.782 ; Rise       ; clk             ;
+;  endereco[2] ; clk        ; 7.050 ; 7.050 ; Rise       ; clk             ;
+;  endereco[3] ; clk        ; 6.783 ; 6.783 ; Rise       ; clk             ;
+;  endereco[4] ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  endereco[5] ; clk        ; 7.102 ; 7.102 ; Rise       ; clk             ;
+; pronto       ; clk        ; 7.081 ; 7.081 ; Rise       ; clk             ;
+; read_mem     ; clk        ; 7.563 ; 7.563 ; Rise       ; clk             ;
+; sad_out[*]   ; clk        ; 6.761 ; 6.761 ; Rise       ; clk             ;
+;  sad_out[0]  ; clk        ; 7.038 ; 7.038 ; Rise       ; clk             ;
+;  sad_out[1]  ; clk        ; 6.792 ; 6.792 ; Rise       ; clk             ;
+;  sad_out[2]  ; clk        ; 6.791 ; 6.791 ; Rise       ; clk             ;
+;  sad_out[3]  ; clk        ; 7.011 ; 7.011 ; Rise       ; clk             ;
+;  sad_out[4]  ; clk        ; 7.035 ; 7.035 ; Rise       ; clk             ;
+;  sad_out[5]  ; clk        ; 6.761 ; 6.761 ; Rise       ; clk             ;
+;  sad_out[6]  ; clk        ; 7.174 ; 7.174 ; Rise       ; clk             ;
+;  sad_out[7]  ; clk        ; 7.327 ; 7.327 ; Rise       ; clk             ;
+;  sad_out[8]  ; clk        ; 6.778 ; 6.778 ; Rise       ; clk             ;
+;  sad_out[9]  ; clk        ; 6.775 ; 6.775 ; Rise       ; clk             ;
+;  sad_out[10] ; clk        ; 7.080 ; 7.080 ; Rise       ; clk             ;
+;  sad_out[11] ; clk        ; 7.349 ; 7.349 ; Rise       ; clk             ;
+;  sad_out[12] ; clk        ; 7.048 ; 7.048 ; Rise       ; clk             ;
+;  sad_out[13] ; clk        ; 7.078 ; 7.078 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.673 ; -19.217       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.203 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -58.380               ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                               ;
++--------+------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -1.673 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.702      ;
+; -1.643 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.672      ;
+; -1.639 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.668      ;
+; -1.609 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.638      ;
+; -1.605 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.634      ;
+; -1.580 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.609      ;
+; -1.575 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.604      ;
+; -1.571 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.600      ;
+; -1.550 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.579      ;
+; -1.546 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.575      ;
+; -1.541 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.570      ;
+; -1.537 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.566      ;
+; -1.532 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.561      ;
+; -1.517 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.546      ;
+; -1.516 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.545      ;
+; -1.512 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.541      ;
+; -1.507 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.536      ;
+; -1.507 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.536      ;
+; -1.503 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.532      ;
+; -1.498 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.527      ;
+; -1.493 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.522      ;
+; -1.492 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.521      ;
+; -1.486 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.515      ;
+; -1.483 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.512      ;
+; -1.482 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.511      ;
+; -1.478 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.507      ;
+; -1.473 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.502      ;
+; -1.473 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.502      ;
+; -1.464 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.493      ;
+; -1.464 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.493      ;
+; -1.459 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.488      ;
+; -1.458 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.487      ;
+; -1.452 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.481      ;
+; -1.449 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.478      ;
+; -1.449 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.478      ;
+; -1.448 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.477      ;
+; -1.444 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.473      ;
+; -1.439 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.468      ;
+; -1.430 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.459      ;
+; -1.430 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.459      ;
+; -1.425 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.454      ;
+; -1.424 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.453      ;
+; -1.418 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.447      ;
+; -1.415 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.444      ;
+; -1.415 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.444      ;
+; -1.414 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.443      ;
+; -1.412 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.441      ;
+; -1.410 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.439      ;
+; -1.405 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.434      ;
+; -1.396 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.425      ;
+; -1.396 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.425      ;
+; -1.391 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.420      ;
+; -1.391 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.420      ;
+; -1.390 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.419      ;
+; -1.384 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.413      ;
+; -1.384 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.413      ;
+; -1.382 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.411      ;
+; -1.381 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.410      ;
+; -1.381 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.410      ;
+; -1.380 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.409      ;
+; -1.371 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.400      ;
+; -1.362 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.391      ;
+; -1.362 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.391      ;
+; -1.357 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.386      ;
+; -1.357 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.386      ;
+; -1.356 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.385      ;
+; -1.356 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.385      ;
+; -1.350 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.379      ;
+; -1.350 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.379      ;
+; -1.347 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.376      ;
+; -1.347 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.376      ;
+; -1.342 ; sad_operativo:bo|registrador:reg_pA|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.371      ;
+; -1.337 ; sad_operativo:bo|registrador:reg_pB|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.366      ;
+; -1.328 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.357      ;
+; -1.326 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.355      ;
+; -1.323 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.352      ;
+; -1.323 ; sad_operativo:bo|registrador:reg_pA|Q[5] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.352      ;
+; -1.322 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.351      ;
+; -1.322 ; sad_operativo:bo|registrador:reg_pA|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.351      ;
+; -1.319 ; sad_operativo:bo|registrador:reg_pA|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.348      ;
+; -1.316 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.345      ;
+; -1.316 ; sad_operativo:bo|registrador:reg_pB|Q[3] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.345      ;
+; -1.313 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.342      ;
+; -1.308 ; sad_operativo:bo|registrador:reg_pA|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.337      ;
+; -1.296 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.325      ;
+; -1.294 ; sad_operativo:bo|registrador:reg_pB|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.323      ;
+; -1.292 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.321      ;
+; -1.289 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.318      ;
+; -1.289 ; sad_operativo:bo|registrador:reg_pA|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.318      ;
+; -1.288 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.317      ;
+; -1.282 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.311      ;
+; -1.279 ; sad_operativo:bo|registrador:reg_pA|Q[4] ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.308      ;
+; -1.274 ; sad_operativo:bo|registrador:reg_pA|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.303      ;
+; -1.271 ; sad_operativo:bo|registrador:reg_pB|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.300      ;
+; -1.262 ; sad_operativo:bo|registrador:reg_pB|Q[1] ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.291      ;
+; -1.258 ; sad_operativo:bo|registrador:reg_pB|Q[0] ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.287      ;
+; -1.256 ; sad_operativo:bo|registrador:reg_pA|Q[2] ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.285      ;
+; -1.255 ; sad_operativo:bo|registrador:reg_pA|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.284      ;
+; -1.254 ; sad_operativo:bo|registrador:reg_pB|Q[7] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 1.000        ; -0.001     ; 2.283      ;
+; -1.248 ; sad_operativo:bo|registrador:reg_pB|Q[6] ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 1.000        ; -0.001     ; 2.277      ;
++--------+------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                  ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.203 ; sad_controle:bc|EstadoAtual.S0              ; sad_controle:bc|EstadoAtual.S0              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.351      ;
+; 0.225 ; sad_operativo:bo|registrador:reg_soma|Q[13] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.373      ;
+; 0.233 ; sad_operativo:bo|registrador:reg_i|Q[6]     ; sad_controle:bc|EstadoAtual.S5              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.381      ;
+; 0.233 ; sad_operativo:bo|registrador:reg_i|Q[6]     ; sad_controle:bc|EstadoAtual.S3              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.381      ;
+; 0.233 ; sad_controle:bc|EstadoAtual.S3              ; sad_controle:bc|EstadoAtual.S4              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.381      ;
+; 0.233 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_sad|Q[9]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.381      ;
+; 0.277 ; sad_controle:bc|EstadoAtual.S0              ; sad_controle:bc|EstadoAtual.S1              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.425      ;
+; 0.302 ; sad_controle:bc|EstadoAtual.S2              ; sad_controle:bc|EstadoAtual.S5              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.450      ;
+; 0.303 ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; sad_operativo:bo|registrador:reg_sad|Q[6]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.451      ;
+; 0.304 ; sad_controle:bc|EstadoAtual.S2              ; sad_controle:bc|EstadoAtual.S3              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.452      ;
+; 0.305 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_sad|Q[8]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.453      ;
+; 0.336 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.341 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.489      ;
+; 0.341 ; sad_operativo:bo|registrador:reg_i|Q[4]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.489      ;
+; 0.341 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.489      ;
+; 0.342 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.342 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.342 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.490      ;
+; 0.343 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.491      ;
+; 0.345 ; sad_controle:bc|EstadoAtual.S5              ; sad_controle:bc|EstadoAtual.S0              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.493      ;
+; 0.349 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.497      ;
+; 0.350 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.498      ;
+; 0.353 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.501      ;
+; 0.354 ; sad_operativo:bo|registrador:reg_i|Q[5]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.502      ;
+; 0.354 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.502      ;
+; 0.354 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.502      ;
+; 0.354 ; sad_operativo:bo|registrador:reg_soma|Q[12] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.502      ;
+; 0.389 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_sad|Q[3]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.408 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_i|Q[0]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.556      ;
+; 0.414 ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.562      ;
+; 0.419 ; sad_operativo:bo|registrador:reg_soma|Q[12] ; sad_operativo:bo|registrador:reg_sad|Q[12]  ; clk          ; clk         ; 0.000        ; -0.005     ; 0.562      ;
+; 0.420 ; sad_operativo:bo|registrador:reg_soma|Q[13] ; sad_operativo:bo|registrador:reg_sad|Q[13]  ; clk          ; clk         ; 0.000        ; -0.005     ; 0.563      ;
+; 0.423 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_sad|Q[5]   ; clk          ; clk         ; 0.000        ; -0.005     ; 0.566      ;
+; 0.424 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_sad|Q[0]   ; clk          ; clk         ; 0.000        ; -0.005     ; 0.567      ;
+; 0.424 ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; sad_operativo:bo|registrador:reg_sad|Q[7]   ; clk          ; clk         ; 0.000        ; -0.005     ; 0.567      ;
+; 0.424 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_sad|Q[10]  ; clk          ; clk         ; 0.000        ; -0.005     ; 0.567      ;
+; 0.425 ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.573      ;
+; 0.425 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_sad|Q[1]   ; clk          ; clk         ; 0.000        ; -0.005     ; 0.568      ;
+; 0.431 ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.579      ;
+; 0.439 ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; sad_operativo:bo|registrador:reg_sad|Q[4]   ; clk          ; clk         ; 0.000        ; -0.005     ; 0.582      ;
+; 0.468 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.616      ;
+; 0.471 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.619      ;
+; 0.473 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[1]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.621      ;
+; 0.473 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.621      ;
+; 0.473 ; sad_operativo:bo|registrador:reg_i|Q[4]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.621      ;
+; 0.474 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.622      ;
+; 0.474 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.622      ;
+; 0.475 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.623      ;
+; 0.482 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.630      ;
+; 0.483 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.631      ;
+; 0.486 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.634      ;
+; 0.487 ; sad_operativo:bo|registrador:reg_i|Q[5]     ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_operativo:bo|registrador:reg_soma|Q[12] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.487 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.635      ;
+; 0.502 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.505 ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; sad_operativo:bo|registrador:reg_sad|Q[2]   ; clk          ; clk         ; 0.000        ; -0.005     ; 0.648      ;
+; 0.505 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.653      ;
+; 0.506 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_sad|Q[11]  ; clk          ; clk         ; 0.000        ; -0.005     ; 0.649      ;
+; 0.507 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[2]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.507 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.507 ; sad_operativo:bo|registrador:reg_i|Q[4]     ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.508 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.656      ;
+; 0.508 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.656      ;
+; 0.509 ; sad_operativo:bo|registrador:reg_soma|Q[11] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.512 ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.660      ;
+; 0.516 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.517 ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.665      ;
+; 0.520 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.521 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.521 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.536 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.539 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.687      ;
+; 0.541 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[3]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.689      ;
+; 0.541 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.689      ;
+; 0.542 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
+; 0.542 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
+; 0.546 ; sad_controle:bc|EstadoAtual.S1              ; sad_controle:bc|EstadoAtual.S2              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.694      ;
+; 0.550 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.554 ; sad_operativo:bo|registrador:reg_i|Q[3]     ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.555 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.555 ; sad_operativo:bo|registrador:reg_soma|Q[10] ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.703      ;
+; 0.558 ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.564 ; sad_operativo:bo|registrador:reg_soma|Q[2]  ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.712      ;
+; 0.570 ; sad_operativo:bo|registrador:reg_i|Q[1]     ; sad_operativo:bo|registrador:reg_i|Q[5]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.573 ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; sad_operativo:bo|registrador:reg_soma|Q[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.721      ;
+; 0.575 ; sad_operativo:bo|registrador:reg_i|Q[0]     ; sad_operativo:bo|registrador:reg_i|Q[4]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.723      ;
+; 0.575 ; sad_operativo:bo|registrador:reg_i|Q[2]     ; sad_operativo:bo|registrador:reg_i|Q[6]     ; clk          ; clk         ; 0.000        ; 0.000      ; 0.723      ;
+; 0.576 ; sad_operativo:bo|registrador:reg_soma|Q[1]  ; sad_operativo:bo|registrador:reg_soma|Q[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.724      ;
+; 0.576 ; sad_operativo:bo|registrador:reg_soma|Q[9]  ; sad_operativo:bo|registrador:reg_soma|Q[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.724      ;
+; 0.584 ; sad_operativo:bo|registrador:reg_soma|Q[3]  ; sad_operativo:bo|registrador:reg_soma|Q[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.732      ;
+; 0.585 ; sad_controle:bc|EstadoAtual.S4              ; sad_controle:bc|EstadoAtual.S2              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.733      ;
+; 0.589 ; sad_operativo:bo|registrador:reg_soma|Q[8]  ; sad_operativo:bo|registrador:reg_soma|Q[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.737      ;
+; 0.590 ; sad_controle:bc|EstadoAtual.S1              ; sad_operativo:bo|registrador:reg_soma|Q[0]  ; clk          ; clk         ; 0.000        ; 0.003      ; 0.741      ;
++-------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S0              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S0              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S1              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S1              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S2              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S2              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S3              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S3              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S4              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S4              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S5              ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_controle:bc|EstadoAtual.S5              ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[0]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[1]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[2]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[3]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[4]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[5]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_i|Q[6]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pA|Q[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[3]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[4]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[5]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[6]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_pB|Q[7]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[0]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[10]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[11]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[12]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[13]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[1]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[2]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[3]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[4]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[5]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[6]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[7]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[8]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_sad|Q[9]   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; sad_operativo:bo|registrador:reg_soma|Q[2]  ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Mem_A[*]  ; clk        ; 2.023  ; 2.023  ; Rise       ; clk             ;
+;  Mem_A[0] ; clk        ; 2.000  ; 2.000  ; Rise       ; clk             ;
+;  Mem_A[1] ; clk        ; -0.209 ; -0.209 ; Rise       ; clk             ;
+;  Mem_A[2] ; clk        ; 1.992  ; 1.992  ; Rise       ; clk             ;
+;  Mem_A[3] ; clk        ; 2.010  ; 2.010  ; Rise       ; clk             ;
+;  Mem_A[4] ; clk        ; 2.008  ; 2.008  ; Rise       ; clk             ;
+;  Mem_A[5] ; clk        ; 1.998  ; 1.998  ; Rise       ; clk             ;
+;  Mem_A[6] ; clk        ; 2.023  ; 2.023  ; Rise       ; clk             ;
+;  Mem_A[7] ; clk        ; 2.017  ; 2.017  ; Rise       ; clk             ;
+; Mem_B[*]  ; clk        ; 1.973  ; 1.973  ; Rise       ; clk             ;
+;  Mem_B[0] ; clk        ; 1.903  ; 1.903  ; Rise       ; clk             ;
+;  Mem_B[1] ; clk        ; -0.190 ; -0.190 ; Rise       ; clk             ;
+;  Mem_B[2] ; clk        ; 1.813  ; 1.813  ; Rise       ; clk             ;
+;  Mem_B[3] ; clk        ; 1.940  ; 1.940  ; Rise       ; clk             ;
+;  Mem_B[4] ; clk        ; 1.881  ; 1.881  ; Rise       ; clk             ;
+;  Mem_B[5] ; clk        ; 1.973  ; 1.973  ; Rise       ; clk             ;
+;  Mem_B[6] ; clk        ; 1.940  ; 1.940  ; Rise       ; clk             ;
+;  Mem_B[7] ; clk        ; 1.930  ; 1.930  ; Rise       ; clk             ;
+; iniciar   ; clk        ; 1.952  ; 1.952  ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Mem_A[*]  ; clk        ; 0.327  ; 0.327  ; Rise       ; clk             ;
+;  Mem_A[0] ; clk        ; -1.882 ; -1.882 ; Rise       ; clk             ;
+;  Mem_A[1] ; clk        ; 0.327  ; 0.327  ; Rise       ; clk             ;
+;  Mem_A[2] ; clk        ; -1.874 ; -1.874 ; Rise       ; clk             ;
+;  Mem_A[3] ; clk        ; -1.892 ; -1.892 ; Rise       ; clk             ;
+;  Mem_A[4] ; clk        ; -1.890 ; -1.890 ; Rise       ; clk             ;
+;  Mem_A[5] ; clk        ; -1.880 ; -1.880 ; Rise       ; clk             ;
+;  Mem_A[6] ; clk        ; -1.905 ; -1.905 ; Rise       ; clk             ;
+;  Mem_A[7] ; clk        ; -1.899 ; -1.899 ; Rise       ; clk             ;
+; Mem_B[*]  ; clk        ; 0.308  ; 0.308  ; Rise       ; clk             ;
+;  Mem_B[0] ; clk        ; -1.785 ; -1.785 ; Rise       ; clk             ;
+;  Mem_B[1] ; clk        ; 0.308  ; 0.308  ; Rise       ; clk             ;
+;  Mem_B[2] ; clk        ; -1.695 ; -1.695 ; Rise       ; clk             ;
+;  Mem_B[3] ; clk        ; -1.822 ; -1.822 ; Rise       ; clk             ;
+;  Mem_B[4] ; clk        ; -1.763 ; -1.763 ; Rise       ; clk             ;
+;  Mem_B[5] ; clk        ; -1.855 ; -1.855 ; Rise       ; clk             ;
+;  Mem_B[6] ; clk        ; -1.822 ; -1.822 ; Rise       ; clk             ;
+;  Mem_B[7] ; clk        ; -1.812 ; -1.812 ; Rise       ; clk             ;
+; iniciar   ; clk        ; -1.832 ; -1.832 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; endereco[*]  ; clk        ; 3.369 ; 3.369 ; Rise       ; clk             ;
+;  endereco[0] ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  endereco[1] ; clk        ; 3.252 ; 3.252 ; Rise       ; clk             ;
+;  endereco[2] ; clk        ; 3.335 ; 3.335 ; Rise       ; clk             ;
+;  endereco[3] ; clk        ; 3.252 ; 3.252 ; Rise       ; clk             ;
+;  endereco[4] ; clk        ; 3.366 ; 3.366 ; Rise       ; clk             ;
+;  endereco[5] ; clk        ; 3.369 ; 3.369 ; Rise       ; clk             ;
+; pronto       ; clk        ; 3.352 ; 3.352 ; Rise       ; clk             ;
+; read_mem     ; clk        ; 3.536 ; 3.536 ; Rise       ; clk             ;
+; sad_out[*]   ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+;  sad_out[0]  ; clk        ; 3.332 ; 3.332 ; Rise       ; clk             ;
+;  sad_out[1]  ; clk        ; 3.268 ; 3.268 ; Rise       ; clk             ;
+;  sad_out[2]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_out[3]  ; clk        ; 3.273 ; 3.273 ; Rise       ; clk             ;
+;  sad_out[4]  ; clk        ; 3.330 ; 3.330 ; Rise       ; clk             ;
+;  sad_out[5]  ; clk        ; 3.238 ; 3.238 ; Rise       ; clk             ;
+;  sad_out[6]  ; clk        ; 3.380 ; 3.380 ; Rise       ; clk             ;
+;  sad_out[7]  ; clk        ; 3.429 ; 3.429 ; Rise       ; clk             ;
+;  sad_out[8]  ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  sad_out[9]  ; clk        ; 3.246 ; 3.246 ; Rise       ; clk             ;
+;  sad_out[10] ; clk        ; 3.366 ; 3.366 ; Rise       ; clk             ;
+;  sad_out[11] ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+;  sad_out[12] ; clk        ; 3.340 ; 3.340 ; Rise       ; clk             ;
+;  sad_out[13] ; clk        ; 3.365 ; 3.365 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; endereco[*]  ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  endereco[0] ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  endereco[1] ; clk        ; 3.252 ; 3.252 ; Rise       ; clk             ;
+;  endereco[2] ; clk        ; 3.335 ; 3.335 ; Rise       ; clk             ;
+;  endereco[3] ; clk        ; 3.252 ; 3.252 ; Rise       ; clk             ;
+;  endereco[4] ; clk        ; 3.366 ; 3.366 ; Rise       ; clk             ;
+;  endereco[5] ; clk        ; 3.369 ; 3.369 ; Rise       ; clk             ;
+; pronto       ; clk        ; 3.352 ; 3.352 ; Rise       ; clk             ;
+; read_mem     ; clk        ; 3.536 ; 3.536 ; Rise       ; clk             ;
+; sad_out[*]   ; clk        ; 3.238 ; 3.238 ; Rise       ; clk             ;
+;  sad_out[0]  ; clk        ; 3.332 ; 3.332 ; Rise       ; clk             ;
+;  sad_out[1]  ; clk        ; 3.268 ; 3.268 ; Rise       ; clk             ;
+;  sad_out[2]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_out[3]  ; clk        ; 3.273 ; 3.273 ; Rise       ; clk             ;
+;  sad_out[4]  ; clk        ; 3.330 ; 3.330 ; Rise       ; clk             ;
+;  sad_out[5]  ; clk        ; 3.238 ; 3.238 ; Rise       ; clk             ;
+;  sad_out[6]  ; clk        ; 3.380 ; 3.380 ; Rise       ; clk             ;
+;  sad_out[7]  ; clk        ; 3.429 ; 3.429 ; Rise       ; clk             ;
+;  sad_out[8]  ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  sad_out[9]  ; clk        ; 3.246 ; 3.246 ; Rise       ; clk             ;
+;  sad_out[10] ; clk        ; 3.366 ; 3.366 ; Rise       ; clk             ;
+;  sad_out[11] ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+;  sad_out[12] ; clk        ; 3.340 ; 3.340 ; Rise       ; clk             ;
+;  sad_out[13] ; clk        ; 3.365 ; 3.365 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -6.538   ; 0.203 ; N/A      ; N/A     ; -1.631              ;
+;  clk             ; -6.538   ; 0.203 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -119.608 ; 0.0   ; 0.0      ; 0.0     ; -71.285             ;
+;  clk             ; -119.608 ; 0.000 ; N/A      ; N/A     ; -71.285             ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; Mem_A[*]  ; clk        ; 4.316 ; 4.316 ; Rise       ; clk             ;
+;  Mem_A[0] ; clk        ; 4.289 ; 4.289 ; Rise       ; clk             ;
+;  Mem_A[1] ; clk        ; 0.238 ; 0.238 ; Rise       ; clk             ;
+;  Mem_A[2] ; clk        ; 4.260 ; 4.260 ; Rise       ; clk             ;
+;  Mem_A[3] ; clk        ; 4.305 ; 4.305 ; Rise       ; clk             ;
+;  Mem_A[4] ; clk        ; 4.283 ; 4.283 ; Rise       ; clk             ;
+;  Mem_A[5] ; clk        ; 4.275 ; 4.275 ; Rise       ; clk             ;
+;  Mem_A[6] ; clk        ; 4.316 ; 4.316 ; Rise       ; clk             ;
+;  Mem_A[7] ; clk        ; 4.304 ; 4.304 ; Rise       ; clk             ;
+; Mem_B[*]  ; clk        ; 4.243 ; 4.243 ; Rise       ; clk             ;
+;  Mem_B[0] ; clk        ; 4.108 ; 4.108 ; Rise       ; clk             ;
+;  Mem_B[1] ; clk        ; 0.234 ; 0.234 ; Rise       ; clk             ;
+;  Mem_B[2] ; clk        ; 3.892 ; 3.892 ; Rise       ; clk             ;
+;  Mem_B[3] ; clk        ; 4.167 ; 4.167 ; Rise       ; clk             ;
+;  Mem_B[4] ; clk        ; 3.944 ; 3.944 ; Rise       ; clk             ;
+;  Mem_B[5] ; clk        ; 4.243 ; 4.243 ; Rise       ; clk             ;
+;  Mem_B[6] ; clk        ; 4.168 ; 4.168 ; Rise       ; clk             ;
+;  Mem_B[7] ; clk        ; 4.150 ; 4.150 ; Rise       ; clk             ;
+; iniciar   ; clk        ; 4.249 ; 4.249 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; Mem_A[*]  ; clk        ; 0.327  ; 0.327  ; Rise       ; clk             ;
+;  Mem_A[0] ; clk        ; -1.882 ; -1.882 ; Rise       ; clk             ;
+;  Mem_A[1] ; clk        ; 0.327  ; 0.327  ; Rise       ; clk             ;
+;  Mem_A[2] ; clk        ; -1.874 ; -1.874 ; Rise       ; clk             ;
+;  Mem_A[3] ; clk        ; -1.892 ; -1.892 ; Rise       ; clk             ;
+;  Mem_A[4] ; clk        ; -1.890 ; -1.890 ; Rise       ; clk             ;
+;  Mem_A[5] ; clk        ; -1.880 ; -1.880 ; Rise       ; clk             ;
+;  Mem_A[6] ; clk        ; -1.905 ; -1.905 ; Rise       ; clk             ;
+;  Mem_A[7] ; clk        ; -1.899 ; -1.899 ; Rise       ; clk             ;
+; Mem_B[*]  ; clk        ; 0.308  ; 0.308  ; Rise       ; clk             ;
+;  Mem_B[0] ; clk        ; -1.785 ; -1.785 ; Rise       ; clk             ;
+;  Mem_B[1] ; clk        ; 0.308  ; 0.308  ; Rise       ; clk             ;
+;  Mem_B[2] ; clk        ; -1.695 ; -1.695 ; Rise       ; clk             ;
+;  Mem_B[3] ; clk        ; -1.822 ; -1.822 ; Rise       ; clk             ;
+;  Mem_B[4] ; clk        ; -1.763 ; -1.763 ; Rise       ; clk             ;
+;  Mem_B[5] ; clk        ; -1.855 ; -1.855 ; Rise       ; clk             ;
+;  Mem_B[6] ; clk        ; -1.822 ; -1.822 ; Rise       ; clk             ;
+;  Mem_B[7] ; clk        ; -1.812 ; -1.812 ; Rise       ; clk             ;
+; iniciar   ; clk        ; -1.832 ; -1.832 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Clock to Output Times                                                    ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; endereco[*]  ; clk        ; 7.102 ; 7.102 ; Rise       ; clk             ;
+;  endereco[0] ; clk        ; 6.777 ; 6.777 ; Rise       ; clk             ;
+;  endereco[1] ; clk        ; 6.782 ; 6.782 ; Rise       ; clk             ;
+;  endereco[2] ; clk        ; 7.050 ; 7.050 ; Rise       ; clk             ;
+;  endereco[3] ; clk        ; 6.783 ; 6.783 ; Rise       ; clk             ;
+;  endereco[4] ; clk        ; 7.099 ; 7.099 ; Rise       ; clk             ;
+;  endereco[5] ; clk        ; 7.102 ; 7.102 ; Rise       ; clk             ;
+; pronto       ; clk        ; 7.081 ; 7.081 ; Rise       ; clk             ;
+; read_mem     ; clk        ; 7.563 ; 7.563 ; Rise       ; clk             ;
+; sad_out[*]   ; clk        ; 7.349 ; 7.349 ; Rise       ; clk             ;
+;  sad_out[0]  ; clk        ; 7.038 ; 7.038 ; Rise       ; clk             ;
+;  sad_out[1]  ; clk        ; 6.792 ; 6.792 ; Rise       ; clk             ;
+;  sad_out[2]  ; clk        ; 6.791 ; 6.791 ; Rise       ; clk             ;
+;  sad_out[3]  ; clk        ; 7.011 ; 7.011 ; Rise       ; clk             ;
+;  sad_out[4]  ; clk        ; 7.035 ; 7.035 ; Rise       ; clk             ;
+;  sad_out[5]  ; clk        ; 6.761 ; 6.761 ; Rise       ; clk             ;
+;  sad_out[6]  ; clk        ; 7.174 ; 7.174 ; Rise       ; clk             ;
+;  sad_out[7]  ; clk        ; 7.327 ; 7.327 ; Rise       ; clk             ;
+;  sad_out[8]  ; clk        ; 6.778 ; 6.778 ; Rise       ; clk             ;
+;  sad_out[9]  ; clk        ; 6.775 ; 6.775 ; Rise       ; clk             ;
+;  sad_out[10] ; clk        ; 7.080 ; 7.080 ; Rise       ; clk             ;
+;  sad_out[11] ; clk        ; 7.349 ; 7.349 ; Rise       ; clk             ;
+;  sad_out[12] ; clk        ; 7.048 ; 7.048 ; Rise       ; clk             ;
+;  sad_out[13] ; clk        ; 7.078 ; 7.078 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                            ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; endereco[*]  ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  endereco[0] ; clk        ; 3.250 ; 3.250 ; Rise       ; clk             ;
+;  endereco[1] ; clk        ; 3.252 ; 3.252 ; Rise       ; clk             ;
+;  endereco[2] ; clk        ; 3.335 ; 3.335 ; Rise       ; clk             ;
+;  endereco[3] ; clk        ; 3.252 ; 3.252 ; Rise       ; clk             ;
+;  endereco[4] ; clk        ; 3.366 ; 3.366 ; Rise       ; clk             ;
+;  endereco[5] ; clk        ; 3.369 ; 3.369 ; Rise       ; clk             ;
+; pronto       ; clk        ; 3.352 ; 3.352 ; Rise       ; clk             ;
+; read_mem     ; clk        ; 3.536 ; 3.536 ; Rise       ; clk             ;
+; sad_out[*]   ; clk        ; 3.238 ; 3.238 ; Rise       ; clk             ;
+;  sad_out[0]  ; clk        ; 3.332 ; 3.332 ; Rise       ; clk             ;
+;  sad_out[1]  ; clk        ; 3.268 ; 3.268 ; Rise       ; clk             ;
+;  sad_out[2]  ; clk        ; 3.267 ; 3.267 ; Rise       ; clk             ;
+;  sad_out[3]  ; clk        ; 3.273 ; 3.273 ; Rise       ; clk             ;
+;  sad_out[4]  ; clk        ; 3.330 ; 3.330 ; Rise       ; clk             ;
+;  sad_out[5]  ; clk        ; 3.238 ; 3.238 ; Rise       ; clk             ;
+;  sad_out[6]  ; clk        ; 3.380 ; 3.380 ; Rise       ; clk             ;
+;  sad_out[7]  ; clk        ; 3.429 ; 3.429 ; Rise       ; clk             ;
+;  sad_out[8]  ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  sad_out[9]  ; clk        ; 3.246 ; 3.246 ; Rise       ; clk             ;
+;  sad_out[10] ; clk        ; 3.366 ; 3.366 ; Rise       ; clk             ;
+;  sad_out[11] ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+;  sad_out[12] ; clk        ; 3.340 ; 3.340 ; Rise       ; clk             ;
+;  sad_out[13] ; clk        ; 3.365 ; 3.365 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 10365    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 10365    ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 18    ; 18   ;
+; Unconstrained Input Port Paths  ; 24    ; 24   ;
+; Unconstrained Output Ports      ; 22    ; 22   ;
+; Unconstrained Output Port Paths ; 22    ; 22   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat May 11 21:04:45 2024
+Info: Command: quartus_sta sad -c sad
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 125 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'sad.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.538
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.538      -119.608 clk 
+Info (332146): Worst-case hold slack is 0.460
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.460         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -71.285 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.673
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.673       -19.217 clk 
+Info (332146): Worst-case hold slack is 0.203
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.203         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -58.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 478 megabytes
+    Info: Processing ended: Sat May 11 21:04:48 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
