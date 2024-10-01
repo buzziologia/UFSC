@@ -1,4 +1,4 @@
-# Laboratório - Organização de Computadores
+# Laboratório 01 - Organização de Computadores
 
 Este laboratório contém a implementação de dois programas em Assembly MIPS, baseados em problemas descritos em linguagem natural, que devem ser executados no simulador MARS. Os programas realizam operações aritméticas simples e interagem com o usuário para entrada e saída de dados.
 
