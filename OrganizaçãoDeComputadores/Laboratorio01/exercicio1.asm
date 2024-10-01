@@ -1,7 +1,7 @@
 .data 
-    b: .word 5            # Variável b armazenando -35
-    d: .word 2            # Variável d armazenando 1
-    e: .word 2            # Variável e armazenando 0
+    b: .word -35          # Variável b armazenando -35
+    d: .word 1            # Variável d armazenando 1
+    e: .word 0            # Variável e armazenando 0
     c: .word              # Variável c sem valor inicial
     result: .word 0
     resultado: .word 0    # Variável para armazenar o resultado de d^3
