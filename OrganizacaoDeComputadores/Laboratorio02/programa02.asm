@@ -32,5 +32,5 @@ show_digit:
 display:
     sb $t6, 0($t1)           # Exibe o valor no display de sete segmentos (direito)
 
-    # Repete o processo indefinidamente
+    # Repete o processo
     j loop
