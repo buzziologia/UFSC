@@ -41,7 +41,6 @@ numero_7seg:
     .word   0x71            # F
 
 .text
-.globl main
 
 main:   
     li  $s0, 0xffff0010     # salva endereço do display de 7 segmentos
