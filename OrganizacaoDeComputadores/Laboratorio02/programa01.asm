@@ -27,6 +27,9 @@ loop:
     addi $t0, $t0, 1       # Incrementa o contador
     addi $t2, $t2, 4       # Move para o próximo valor no mapeamento dos segmentos
 
+    # Chama a rotina de delay
+    jal delay               # Chama a função de delay
+
     # Se atingir 10, reseta o contador e volta a 0
     beq $t0, $t1, reset    # Se o contador atingir o limite, reseta
 
@@ -36,6 +39,15 @@ reset:
     li $t0, 0               # Reseta o contador para 0
     la $t2, segment_map     # Reseta o endereço base do mapeamento dos segmentos
     j loop                  # Volta para o loop
+
+# Rotina de delay
+delay:
+    li $t4, 500000        # Número de iterações para o delay (ajuste conforme necessário)
+	    
+delay_loop:
+    addi $t4, $t4, -1      # Decrementa o contador de delay
+    bgtz $t4, delay_loop   # Continua enquanto $t4 > 0
+    jr $ra                  # Retorna da função de delay
 
 end:
     li $v0, 10              # Syscall para terminar o programa
