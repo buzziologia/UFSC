@@ -1,36 +1,44 @@
-# MIPS Assembly Programs
+# Atividade de Conversão de C para Assembly MIPS
 
-Este repositório contém implementações de programas em MIPS Assembly baseadas em instruções fornecidas em linguagem C. As tarefas envolvem manipulação de variáveis, vetores e estruturas de controle de fluxo, usando registradores no MIPS.
+Este repositório contém a implementação de programas em Assembly MIPS a partir de instruções em C. A seguir, a descrição das tarefas propostas e suas respectivas implementações.
 
-## Tarefa 1: Conversão de Instruções C para MIPS Assembly
+## Tarefas
 
-### Descrição:
-As variáveis `A = 10`, `B = 15`, `C = 20`, `D = 25`, `E = 30`, `F = 35` foram previamente armazenadas na memória. Use os registradores `$s0` a `$s5` para manipular essas variáveis, e `$s6` e `$s7` para manipular os vetores `G[4]` e `H[4]`, que são inicializados com zeros. O programa deve implementar as seguintes instruções:
+### 1. Conversão de Instruções de C para Assembly MIPS
+- **Descrição**: Converter linhas de instruções escritas em linguagem C para instruções em Assembly do MIPS.
+- **Condições**:
+  - As variáveis `A = 10`, `B = 15`, `C = 20`, `D = 25`, `E = 30` e `F = 35` foram armazenadas previamente na memória de dados.
+  - Os vetores `G` e `H` possuem quatro posições cada e inicializam com zeros. Use os registradores `$s0` até `$s5` para manipular os dados e `$s6` e `$s7` para manipular as posições dos vetores.
 
-1. `G[0] = (A – (B + C) + F);`
-2. `G[1] = E – (A – B) * (B – C);`
-3. `G[2] = G[1] – C;`
-4. `G[3] = G[2] + G[0];`
-5. `H[0] = B – C;`
-6. `H[1] = A + C;`
-7. `H[2] = B – C + G[3];`
-8. `H[3] = B – G[0] + D;`
+### 2. Cálculo de Soma
+- **Descrição**: Fazer um programa que calcule a soma: ∑i=15i.
+  
+### 3. Carregamento de Vetor na Memória
+- **Descrição**: Carregar o vetor `v = [1, 3, 2, 1, 4, 5]` para a memória. O registrador `$s0` contém o endereço de início do vetor como sendo `0x10010020`.
 
-## Tarefa 2: Cálculo de Somatório
+### 4. Carregamento de Vetor Indexado
+- **Descrição**: Modificar o programa anterior fazendo o acesso à memória de forma indexada. O registrador `$s0` contém o valor `0x10010020`.
 
-### Descrição:
-Escreva um programa que calcule o somatório de `∑ i=1 até 5 i`, ou seja, a soma dos números inteiros de 1 a 5.
+### 5. Programas com Estruturas de Controle
+- **Descrição**: Implementar pequenos programas em Assembly MIPS para cada expressão em C fornecida.
 
-## Tarefa 3: Carregamento de Vetor na Memória
+1. a) if (a > b) a = a + 1;
+2. b) if (a ≥ b) b = b + 1;
+3. c) if (a ≤ b) a = a + 1;
+4. d) if (a == b) b = a;
+5. e) if (a < b) a = a + 1; else b = b + 1;
+6. f) a = 0; b = 0; c = 5; while (a < c) {a = a + 1; b = b + 2;}
+7. g) a = 1; b = 2; for (i = 0; i < 5; i++) {a = b + 1; b = b + 3;}
+8. h) switch(a) { case 1: b = c + 1; break; case 2: b = c + 2; break; default: b = c; break; }
 
-### Descrição:
-Implemente um programa que carregue o vetor `v = [1, 3, 2, 1, 4, 5]` na memória. Assuma que o registrador `$s0` contém o endereço inicial `0x10010020`.
+## Estrutura do Repositório
+- `README.md`: Este arquivo, contendo a descrição das tarefas.
+- `assembly_programs.asm`: Arquivo contendo todas as implementações em Assembly MIPS.
 
-### Instruções a serem implementadas:
-```c
-v[0] = 1;
-v[1] = 3;
-v[2] = 2;
-v[3] = 1;
-v[4] = 4;
-v[5] = 5;
+## Como Executar
+1. Clone o repositório.
+2. Compile e execute os programas utilizando um simulador MIPS, como o MARS ou o SPIM.
+
+## Licença
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
