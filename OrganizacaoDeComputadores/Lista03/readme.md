@@ -18,14 +18,14 @@ Este repositório contém implementações em Assembly do MIPS para diferentes p
 7. `H[2] = B – C + G[3];`
 8. `H[3] = B – G[0] + D;`
 
-O arquivo correspondente a essa tarefa está no código `task1.asm`.
+O arquivo correspondente a essa tarefa está no código `exercicio_01`.
 
 ## Tarefa 2: Somatório de uma Sequência
 
 ### Descrição:
 Escreva um programa que calcule o somatório de `∑ i = 1 até 5`.
 
-O arquivo correspondente a essa tarefa está no código `task2.asm`.
+O arquivo correspondente a essa tarefa está no código `exercicio_02`.
 
 ## Tarefa 3: Carregar Vetor na Memória
 
