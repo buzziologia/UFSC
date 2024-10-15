@@ -1,14 +1,12 @@
 # MIPS Assembly Programs
 
-Este repositório contém implementações em Assembly do MIPS para diferentes programas descritos em linguagem C. O objetivo é demonstrar a conversão de instruções de alto nível para código assembly e abordar operações com variáveis, vetores e estruturas de controle. As implementações foram testadas no simulador MARS.
+Este repositório contém implementações de programas em MIPS Assembly baseadas em instruções fornecidas em linguagem C. As tarefas envolvem manipulação de variáveis, vetores e estruturas de controle de fluxo, usando registradores no MIPS.
 
-## Tarefa 1: Converter Instruções em C para MIPS Assembly
+## Tarefa 1: Conversão de Instruções C para MIPS Assembly
 
 ### Descrição:
-- As variáveis `A = 10`, `B = 15`, `C = 20`, `D = 25`, `E = 30` e `F = 35` foram previamente armazenadas na memória de dados. Os registradores `$s0` até `$s5` são usados para manipular essas variáveis.
-- Os vetores `G[4]` e `H[4]` são inicializados com zeros em todas as suas posições (words). Os registradores `$s6` e `$s7` são utilizados para manipular essas posições.
-  
-### Instruções:
+As variáveis `A = 10`, `B = 15`, `C = 20`, `D = 25`, `E = 30`, `F = 35` foram previamente armazenadas na memória. Use os registradores `$s0` a `$s5` para manipular essas variáveis, e `$s6` e `$s7` para manipular os vetores `G[4]` e `H[4]`, que são inicializados com zeros. O programa deve implementar as seguintes instruções:
+
 1. `G[0] = (A – (B + C) + F);`
 2. `G[1] = E – (A – B) * (B – C);`
 3. `G[2] = G[1] – C;`
@@ -18,21 +16,17 @@ Este repositório contém implementações em Assembly do MIPS para diferentes p
 7. `H[2] = B – C + G[3];`
 8. `H[3] = B – G[0] + D;`
 
-O arquivo correspondente a essa tarefa está no código `exercicio_01`.
-
-## Tarefa 2: Somatório de uma Sequência
+## Tarefa 2: Cálculo de Somatório
 
 ### Descrição:
-Escreva um programa que calcule o somatório de `∑ i = 1 até 5`.
+Escreva um programa que calcule o somatório de `∑ i=1 até 5 i`, ou seja, a soma dos números inteiros de 1 a 5.
 
-O arquivo correspondente a essa tarefa está no código `exercicio_02`.
-
-## Tarefa 3: Carregar Vetor na Memória
+## Tarefa 3: Carregamento de Vetor na Memória
 
 ### Descrição:
-Escreva um programa que carregue o vetor `v = [1, 3, 2, 1, 4, 5]` na memória. O endereço inicial do vetor é assumido como `0x10010020` e o registrador `$s0` contém este endereço.
+Implemente um programa que carregue o vetor `v = [1, 3, 2, 1, 4, 5]` na memória. Assuma que o registrador `$s0` contém o endereço inicial `0x10010020`.
 
-### Instruções:
+### Instruções a serem implementadas:
 ```c
 v[0] = 1;
 v[1] = 3;
