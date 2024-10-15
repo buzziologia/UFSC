@@ -20,16 +20,79 @@ Este repositório contém a implementação de programas em Assembly MIPS a part
 - **Descrição**: Modificar o programa anterior fazendo o acesso à memória de forma indexada. O registrador `$s0` contém o valor `0x10010020`.
 
 ### 5. Programas com Estruturas de Controle
-- **Descrição**: Implementar pequenos programas em Assembly MIPS para cada expressão em C fornecida.
 
-1. a) if (a > b) a = a + 1;
-2. b) if (a ≥ b) b = b + 1;
-3. c) if (a ≤ b) a = a + 1;
-4. d) if (a == b) b = a;
-5. e) if (a < b) a = a + 1; else b = b + 1;
-6. f) a = 0; b = 0; c = 5; while (a < c) {a = a + 1; b = b + 2;}
-7. g) a = 1; b = 2; for (i = 0; i < 5; i++) {a = b + 1; b = b + 3;}
-8. h) switch(a) { case 1: b = c + 1; break; case 2: b = c + 2; break; default: b = c; break; }
+**Descrição**: Implementar pequenos programas em Assembly MIPS para cada uma das expressões fornecidas em C.
+
+#### a) 
+````c
+if (a > b) {
+    a = a + 1;
+}
+````
+
+#### b) 
+````c
+if (a ≥ b) {
+    b = b + 1;
+}
+````
+#### c) 
+````c
+if (a ≤ b) {
+    a = a + 1;
+}
+````
+#### d) 
+````c
+if (a == b) {
+    b = a;
+}
+````
+
+#### e) 
+````c
+if (a < b) {
+    a = a + 1;
+} else {
+    b = b + 1;
+}
+````
+
+#### f) 
+````c
+a = 0;
+b = 0;
+c = 5;
+while (a < c) {
+    a = a + 1;
+    b = b + 2;
+}
+````
+
+#### g) 
+````c
+a = 1;
+b = 2;
+for (i = 0; i < 5; i++) {
+    a = b + 1;
+    b = b + 3;
+}
+````
+
+#### h) 
+````c
+switch (a) {
+    case 1:
+        b = c + 1;
+        break;
+    case 2:
+        b = c + 2;
+        break;
+    default:
+        b = c;
+        break;
+}
+````
 
 ## Estrutura do Repositório
 - `README.md`: Este arquivo, contendo a descrição das tarefas.
