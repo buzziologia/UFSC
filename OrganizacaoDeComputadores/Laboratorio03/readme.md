@@ -1,4 +1,4 @@
-# Laboratório de Métodos Numéricos - Newton e Seno
+# Laboratório 03 - Organização de Computadores
 
 Este laboratório envolve a implementação de dois programas em Assembly MIPS, que devem ser executados no simulador MARS.
 
