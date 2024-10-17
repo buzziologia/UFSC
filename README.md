@@ -16,8 +16,8 @@ O objetivo deste repositório é consolidar os conhecimentos adquiridos nas disc
 
 ## Tecnologias Utilizadas
 
-- **Linguagens**: C, C++, Python, Java, etc.
-- **Ferramentas**: Git, VS Code, GCC, etc.
+- **Linguagens**: C, C++, Python, Java, Assembly, etc.
+- **Ferramentas**: Git, VS Code, GCC, Mars, Pycharm etc.
 
 ## Como Usar
 
