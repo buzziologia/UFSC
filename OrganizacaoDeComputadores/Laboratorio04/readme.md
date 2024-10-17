@@ -28,17 +28,9 @@ Neste programa, a matriz de 16x16 é percorrida coluna a coluna, preenchendo os 
      - Incrementar o contador.
 3. Finalizar o programa.
 
-## Como Executar
+## Ferramentas Utilizadas:
+- **MARS Simulator**: Simulador MIPS utilizado para executar programas Assembly.
 
-1. Certifique-se de ter o MARS instalado em seu sistema.
-2. Abra o MARS e carregue o código desejado.
-3. Clique em "Assemble" para compilar o código.
-4. Execute o programa clicando em "Run".
-
-## Considerações Finais
-
-Estes programas demonstram a manipulação de matrizes em MIPS, explorando o uso de loops aninhados e a atribuição de valores em um espaço de memória. Experimente modificar o código para entender melhor o funcionamento das operações.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+## Como Executar:
+1. Carregue o arquivo `.asm` no MARS.
+2. Execute o programa para visualizar os resultados no console.
