@@ -1,4 +1,4 @@
-# Projetos MARS - Manipulação de Matrizes 16x16
+# # Laboratório 04 - Organização de Computadores
 
 Este repositório contém dois programas implementados no MARS (MIPS Assembler and Runtime Simulator) para manipulação de matrizes de 16 por 16 elementos. O objetivo é preencher essas matrizes com valores de 0 a 255, utilizando dois métodos diferentes: linha a linha e coluna a coluna.
 
