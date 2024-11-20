@@ -30,26 +30,10 @@ Neste programa, a matriz de 16x16 é percorrida coluna a coluna, preenchendo os 
 
 ## Ferramentas Utilizadas:
 - **MARS Simulator**: Simulador MIPS utilizado para executar programas Assembly.
+- **Cache Simulator**: Tool disponível no Mars Simulator para simulação de cache.
 
 ## Como Executar:
 1. Carregue o arquivo `.asm` no MARS.
 2. Execute o programa para visualizar os resultados no console.
-3. O programa exibirá a matriz preenchida de acordo com o método utilizado (linha a linha ou coluna a coluna).
-
-## Estrutura do Repositório
-
-- **`/codigo/`**: Contém os arquivos de código fonte para as implementações do laboratório.
-- **`/prints/`**: Contém as imagens capturadas do simulador durante as execuções.
-- **`/documentos/`**: Contém a documentação gerada durante o laboratório, como relatórios de simulação e análise.
-
-## Conclusão
-
-Este laboratório fornece uma análise prática sobre a manipulação de matrizes em **Assembly MIPS**. Ao realizar as duas implementações (linha a linha e coluna a coluna), é possível observar como a organização da memória impacta no preenchimento e no acesso aos dados.
-
----
-
-### Notas Finais:
-- A abordagem **linha a linha** pode ser mais eficiente quando a matriz é armazenada de forma sequencial na memória.
-- A abordagem **coluna a coluna** pode não ser tão eficiente, devido ao padrão de acesso não sequencial à memória.
 
 
