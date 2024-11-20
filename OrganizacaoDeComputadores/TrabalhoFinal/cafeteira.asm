@@ -13,6 +13,9 @@
 # 	cobrado.
 
 .data
+	BEM_VINDO: .asciiz "Bem Vindo"
+	SELECIONA: .asciiz "Escolha sua bebida \n 1 - Café puro \n 2 - Café com leite \n 3 - Mocacchino"
+	ACUCAR: .asciiz
 	# Setando as quantidades inicias de ingredientes
 	cafe: .word 20
 	leite: .word 20
@@ -23,11 +26,53 @@
 	pequeno: .word 1
 	grande: .word 2
 .text
-main:
+main:	
+	lw $s0 cafe
+	lw $s1 leite
+	lw $2 chocolate
+	lw $s3 acucar
+	lw $s4 pequeno
+	lw $s5 grande
+	
+	
+maquina_cafe:
+	# chamadas dos procedimentos
+	escolhe_bebida
+	escolhe_tamanho
+	escolhe_acucar
+	disponibilidade
+		repositor j maquina_cafe
+		
+	prepara_bebida
+	entrega
+	
 	j inicia
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 inicia:
-	# Carregar Quantidade Ingredientes
+	lw $t7 bem_vindo
+	# procedimento printar mensagem
 	# Mensagem de Boas Vindas
 	
 	j seleciona
@@ -37,7 +82,7 @@ seleciona:
 		# salvar os ingredientes usados no cafe
 	# pedir tamanho do copo
 		# decrementar conforme tamanho do copo
-	j verificarwh
+	j verificar
 	
 verifica:
 prepara:
