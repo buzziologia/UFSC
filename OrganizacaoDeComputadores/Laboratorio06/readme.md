@@ -1,1 +1,55 @@
+# Laboratório 06 - Organização de Computadores
+
+Este repositório contém dois programas implementados no **MARS (MIPS Assembler and Runtime Simulator)** para manipulação de matrizes de 16 por 16 elementos. O objetivo é preencher essas matrizes com valores de 0 a 255, utilizando dois métodos diferentes: linha a linha e coluna a coluna.
+
+## Atividades
+
+### 1. Preenchimento de Matriz Linha a Linha
+
+Neste programa, a matriz de 16x16 é percorrida linha a linha. Os elementos da matriz são preenchidos com valores de 0 a 255 na ordem.
+
+#### Algoritmo
+1. Inicializar um contador em 0.
+2. Para cada linha da matriz (de 0 a 15):
+   - Para cada coluna da matriz (de 0 a 15):
+     - Atribuir o valor do contador à posição atual da matriz.
+     - Incrementar o contador.
+3. Finalizar o programa.
+
+### 2. Preenchimento de Matriz Coluna a Coluna
+
+Neste programa, a matriz de 16x16 é percorrida coluna a coluna, preenchendo os elementos com valores de 0 a 255 na ordem.
+
+#### Algoritmo
+1. Inicializar um contador em 0.
+2. Para cada coluna da matriz (de 0 a 15):
+   - Para cada linha da matriz (de 0 a 15):
+     - Atribuir o valor do contador à posição atual da matriz.
+     - Incrementar o contador.
+3. Finalizar o programa.
+
+## Ferramentas Utilizadas:
+- **MARS Simulator**: Simulador MIPS utilizado para executar programas Assembly.
+
+## Como Executar:
+1. Carregue o arquivo `.asm` no MARS.
+2. Execute o programa para visualizar os resultados no console.
+3. O programa exibirá a matriz preenchida de acordo com o método utilizado (linha a linha ou coluna a coluna).
+
+## Estrutura do Repositório
+
+- **`/codigo/`**: Contém os arquivos de código fonte para as implementações do laboratório.
+- **`/prints/`**: Contém as imagens capturadas do simulador durante as execuções.
+- **`/documentos/`**: Contém a documentação gerada durante o laboratório, como relatórios de simulação e análise.
+
+## Conclusão
+
+Este laboratório fornece uma análise prática sobre a manipulação de matrizes em **Assembly MIPS**. Ao realizar as duas implementações (linha a linha e coluna a coluna), é possível observar como a organização da memória impacta no preenchimento e no acesso aos dados.
+
+---
+
+### Notas Finais:
+- A abordagem **linha a linha** pode ser mais eficiente quando a matriz é armazenada de forma sequencial na memória.
+- A abordagem **coluna a coluna** pode não ser tão eficiente, devido ao padrão de acesso não sequencial à memória.
+
 
