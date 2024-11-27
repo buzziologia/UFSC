@@ -34,24 +34,5 @@ Neste programa, a soma de uma matriz com sua transposta é realizada utilizando 
 
 ## Procedimento de Simulação
 
-O procedimento de simulação para ambos os programas foi realizado seguindo os passos descritos abaixo, utilizando diferentes configurações de cache para analisar o desempenho de cada implementação.
+O procedimento de simulação para ambos os programas foi realizado seguindo os passos descritos no relatório da atividade, utilize os mesmo parametros da cache simulator para obter os mesmos resultados.
 
-1. **Configuração Inicial da Cache:**
-    - Definir a configuração inicial da cache com tamanho do bloco de 4 palavras e 16 blocos, utilizando mapeamento direto.
-
-2. **Ajuste da Velocidade de Execução:**
-    - Ajustar o controle deslizante \textit{Run Speed} para 30 instruções por segundo, permitindo observar detalhadamente a animação do desempenho da cache.
-
-3. **Execução dos Programas:**
-    - Executar os programas e observar a animação do desempenho da cache conforme cada acesso à memória é realizado.
-
-4. **Registro dos Resultados:**
-    - Anotar a taxa final de acertos da cache para cada configuração testada.
-    - Modificar o tamanho do bloco para 8 palavras e executar novamente os programas, registrando a nova taxa de acertos.
-    - Modificar o tamanho do bloco para 2 palavras e executar novamente os programas, registrando a nova taxa de acertos.
-
-5. **Configuração Adicional da Cache:**
-    - Criar uma segunda instância do \textit{Data Cache Simulator} selecionando novamente \textit{Data Cache Simulator} no menu \textit{Tools}.
-    - Na nova instância, ajustar o tamanho do bloco e o número de blocos conforme necessário.
-    - Conectar a nova instância ao MIPS e executar novamente os programas.
-    - Registrar o desempenho da cache para ambas as instâncias, comparando os resultados.
