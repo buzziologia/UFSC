@@ -1,5 +1,5 @@
 .data
-nome_arquivo: .asciiz "C:\\Users\\vinir\\gitbuzzi\\UFSC\\OrganizacaoDEComputadores\\TrabalhoFinal\\NOTAFISCAL.txt"  # Caminho para o arquivo
+nome_arquivo: .asciiz "C:\\Users\\vinir\\gitbuzzi\\UFSC\\OrganizacaoDEComputadores\\TrabalhoFinal\\OIE.txt"  # Caminho para o arquivo
 puro_str: .asciiz "Cafe Puro\n"
 leite_str: .asciiz "Cafe com Leite\n"
 mocaccino_str: .asciiz "Mocaccino\n"
@@ -18,11 +18,20 @@ preco_mocaccino_grande_str: .asciiz "7,00\n"
 
 .text
 .globl main
+
 main:
     li $s4, 1                # Bebida selecionada (1: Cafe Puro, 2: Cafe com Leite, 3: Mocaccino)
     li $s5, 1                # Tamanho (1: Pequeno, 2: Grande)
     li $s6, 1                # Açúcar (1: Sem Açúcar, 2: Com Açúcar)
 
+    # Chama o procedimento GERAR_TXT
+    jal GERAR_TXT
+
+    # Finaliza o programa
+    li $v0, 10               # Syscall para encerrar o programa
+    syscall
+
+GERAR_TXT:
     # Passo 1: Abrir/criar o arquivo
     li $v0, 13               # Syscall para abrir/criar arquivo
     la $a0, nome_arquivo     # Nome do arquivo
@@ -158,9 +167,7 @@ fim:
     move $a0, $t0            # Descritor do arquivo
     syscall
 
-    # Finaliza o programa
-    li $v0, 10               # Syscall para encerrar o programa
-    syscall
+    jr $ra                   # Retorna ao chamador
 
 erro_abrir_arquivo:
     # Imprime mensagem de erro

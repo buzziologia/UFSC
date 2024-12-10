@@ -1,5 +1,5 @@
 .data
-nome_arquivo: .asciiz "C:\\Users\\vinir\\gitbuzzi\\UFSC\\OrganizacaoDEComputadores\\TrabalhoFinal\\NOTAFISCAL.txt"  # Caminho para o arquivo
+nome_arquivo: .asciiz "C:\\Users\\vinir\\gitbuzzi\\UFSC\\OrganizacaoDEComputadores\\TrabalhoFinal\\OIE.txt"  # Caminho para o arquivo
 puro_str: .asciiz "Cafe Puro\n"
 leite_str: .asciiz "Cafe com Leite\n"
 mocaccino_str: .asciiz "Mocaccino\n"
@@ -15,14 +15,23 @@ preco_leite_pequeno_str: .asciiz "4,50\n"
 preco_leite_grande_str: .asciiz "6,50\n"
 preco_mocaccino_pequeno_str: .asciiz "5,00\n"
 preco_mocaccino_grande_str: .asciiz "7,00\n"
-
+empresa_info: .asciiz "CoffeeBreak - Seu Cafe Perfeito\nEndereco: Rua dos Aromas, 123 - Centro - CafeLandia\nTelefone: (48) 1234-5678\nCNPJ: 12.345.678/0001-90\nObrigado por escolher CoffeeBreak!\n\n"
+seu_pedido: .asciiz "Seu pedido foi:\n"
 .text
-.globl main
+
+
 main:
     li $s4, 1                # Bebida selecionada (1: Cafe Puro, 2: Cafe com Leite, 3: Mocaccino)
     li $s5, 1                # Tamanho (1: Pequeno, 2: Grande)
     li $s6, 1                # Açúcar (1: Sem Açúcar, 2: Com Açúcar)
 
+    # Chama o procedimento GERAR_TXT
+    jal GERAR_TXT
+
+    # Finaliza o programa
+    li $v0, 10               # Syscall para encerrar o programa
+    syscall
+GERAR_TXT:
     # Passo 1: Abrir/criar o arquivo
     li $v0, 13               # Syscall para abrir/criar arquivo
     la $a0, nome_arquivo     # Nome do arquivo
@@ -38,6 +47,22 @@ main:
     # Escreve a bebida selecionada
     li $v0, 15               # Syscall para escrever no arquivo
     move $a0, $t0            # Descritor do arquivo
+    
+    la $a1, empresa_info
+    li $a2, 170
+    syscall
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    
+    la $a1, seu_pedido
+    li $a2, 16
+    syscall
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    
+    
+    
+    
     beq $s4, 1, escreve_cafe_puro
     beq $s4, 2, escreve_cafe_com_leite
     beq $s4, 3, escreve_mocaccino
@@ -77,7 +102,7 @@ escreve_pequeno:
 
 escreve_grande:
     la $a1, grande_str       # Ponteiro para a string "Grande"
-    li $a2, 6                # Número de bytes a serem escritos
+    li $a2, 7                # Número de bytes a serem escritos
     syscall
     j verifica_acucar
 
@@ -158,9 +183,7 @@ fim:
     move $a0, $t0            # Descritor do arquivo
     syscall
 
-    # Finaliza o programa
-    li $v0, 10               # Syscall para encerrar o programa
-    syscall
+    jr $ra                   # Retorna ao chamador
 
 erro_abrir_arquivo:
     # Imprime mensagem de erro

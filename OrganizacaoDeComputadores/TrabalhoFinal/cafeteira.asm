@@ -1,6 +1,6 @@
 .data 
     # --------------- ESTOQUE ---------------
-    cafe:       	.word 1
+    cafe:       	.word 20
     leite:      	.word 20
     chocolate:  	.word 20
     acucar:     	.word 20
@@ -46,7 +46,7 @@
     # Mensagens de reposição
     senha_prompt:   .asciiz  "\n Insira a senha para reposição: "
     reposicao_sucesso: .asciiz "\n Reposição realizada com sucesso!\n"
-    reposicao_falha:   .asciiz "\n Senha incorreta ou tempo esgotado. Retornando ao menu principal...\n"
+    reposicao_falha:   .asciiz "\n Operação mal sucedida. Retornando ao menu principal...\n"
     
     # --------------- Mapeamento dos segmentos ---------------
     teclado:
@@ -102,18 +102,34 @@
         .word 13    # d
         .word 14    # e
         .word 15    # f
+        
+    # _______________________________________________________ GERADOR TXT _______________________________________________________________
+    
+    nome_arquivo: .asciiz "C:\\Users\\vinir\\gitbuzzi\\UFSC\\OrganizacaoDEComputadores\\TrabalhoFinal\\ComprovanteFiscal.txt"  # Caminho para o arquivo
+    empresa_info: .asciiz "CoffeeBreak - Seu Cafe Perfeito\nEndereco: Rua dos Aromas, 123 - Centro - CafeLandia\nTelefone: (48) 1234-5678\nCNPJ: 12.345.678/0001-90\nObrigado por escolher CoffeeBreak!\n\n"
+    
+    puro_str: 				.asciiz 	"Cafe Puro\n"
+    leite_str: 				.asciiz 	"Cafe com Leite\n"
+    mocaccino_str: 			.asciiz 	"Mocaccino\n"
+    pequeno_str: 			.asciiz 	"Pequeno\n"
+    grande_str: 			.asciiz 	"Grande\n"
+    acucar_str: 			.asciiz 	"Com Acucar\n"
+    sem_acucar_str: 			.asciiz 	"Sem Acucar\n"
+    erro_str: 				.asciiz 	"Erro ao abrir arquivo\n"
+    valor_pago_str: 			.asciiz 	"Valor Pago: R$ "
+    preco_puro_pequeno_str: 		.asciiz 	"3,00\n"
+    preco_puro_grande_str: 		.asciiz 	"5,00\n"
+    preco_leite_pequeno_str: 		.asciiz 	"4,50\n"
+    preco_leite_grande_str: 		.asciiz 	"6,50\n"
+    preco_mocaccino_pequeno_str: 	.asciiz 	"5,00\n"
+    preco_mocaccino_grande_str: 	.asciiz 	"7,00\n"
+    seu_pedido: 			.asciiz 	"Seu pedido foi:\n"
 
-    nome_arquivo: .asciiz "C:\\Users\\vinir\\gitbuzzi\\UFSC\\OrganizacaoDEComputadores\\TrabalhoFinal\\pedido.txt"
 
-vetor_str: .asciiz "Café Puro\nCafé com Leite\nMocaccino\nPequeno\nGrande\nCom Açúcar\nSem Açúcar\n"
 
-# Tamanhos das strings em bytes (incluindo o caractere nulo)
-tamanho_bebida: .word 11, 16, 9  # Tamanhos das bebidas
-tamanho_tamanho: .word 7, 6      # Tamanhos dos tamanhos (pequeno, grande)
-tamanho_acucar: .word 11, 11     # Tamanhos dos tipos de açúcar
 .text
 
-main:
+MAIN:
     # ========= Variáveis Globais ===========
     # --------------- ESTOQUE ---------------
     lw  $s0, cafe
@@ -131,17 +147,6 @@ main:
     # $s5 - tamanho (1 para pequeno ou 2 para grande)
     # $s6 - acucar (0 para sem ou 1 para com açúcar)
     
-    la  $a0, flush
-    li  $v0, 4 
-    syscall
-    
-    la  $a0, marca
-    li  $v0, 4
-    syscall
-    
-    la  $a0, precificacao
-    li  $v0, 4
-    syscall
     
 selecionar:
     jal SELECIONAR_BEBIDA   
@@ -178,6 +183,19 @@ contagem_regressiva:
     beq $s4, 2, atualizar_estoque_cafe_leite
     beq $s4, 3, atualizar_estoque_moca
 
+atualizar:
+   jal ATUALIZAR
+
+gerar:
+    jal GERAR_TXT
+    j selecionar  # Retorna ao início para permitir novo pedido
+   
+
+# **************************************************************************************************************************************************
+
+ATUALIZAR:
+    sw $ra, 0($sp)      # Salva $ra na pilha
+	
 atualizar_estoque_cafe_puro:
     subi $s0, $s0, 1  # Decrementa o estoque de café
     j gerar
@@ -192,100 +210,179 @@ atualizar_estoque_moca:
     subi $s1, $s1, 1  # Decrementa o estoque de leite
     subi $s2, $s2, 1  # Decrementa o estoque de chocolate
     j gerar
+    
+# **************************************************************************************************************************************************
 
-gerar:
-    jal GERAR_NOTA
-    j selecionar  # Retorna ao início para permitir novo pedido
-   
-
-
-
-GERAR_NOTA:
-    # Salva $ra na pilha para retorno
-    addi $sp, $sp, -4
-    sw $ra, 0($sp)
-
+GERAR_TXT:
     # Passo 1: Abrir/criar o arquivo
     li $v0, 13               # Syscall para abrir/criar arquivo
     la $a0, nome_arquivo     # Nome do arquivo
     li $a1, 1                # Modo de acesso: 1 = Escrita
-    li $a2, 511              # Permissões (777 em octal)
+    li $a2, 511              # Permissões (decimal equivalente a 777 em octal)
     syscall
     move $t0, $v0            # Salva o descritor do arquivo no $t0
 
-    # Verifica erro ao abrir/criar o arquivo
-    bltz $t0, finalizar      # Se $t0 < 0, termina o programa
+    # Verifica se o arquivo foi aberto com sucesso
+    bltz $v0, erro_abrir_arquivo  # Se $v0 < 0, ocorreu erro
 
-    # Passo 2: Escrever a bebida no arquivo
-    la $t1, vetor_str        # Carrega o endereço base do vetor de strings
-    la $t2, tamanho_bebida   # Carrega o endereço do vetor de tamanhos das bebidas
-    lw $t3, 0($t2)           # Carrega o tamanho da primeira bebida (Café Puro)
-    sll $s4, $s4, 2          # Multiplica o índice da bebida por 4 (4 bytes por palavra)
-    lw $t4, 0($t2)           # Carrega o tamanho da bebida
-    add $t5, $t1, $t4        # Calcula o endereço da bebida selecionada
-    add $t5, $t5, $s4        # Ajusta o endereço conforme o índice
-    la $a1, ($t5)            # Carrega o endereço da bebida
-    lw $a2, ($t2)            # Carrega o tamanho da bebida
+    # Passo 2: Escrever no arquivo
+    # Escreve a bebida selecionada
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    
+    la $a1, empresa_info
+    li $a2, 170
+    syscall
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    
+    la $a1, seu_pedido
+    li $a2, 16
+    syscall
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    
+    beq $s4, 1, escreve_cafe_puro
+    beq $s4, 2, escreve_cafe_com_leite
+    beq $s4, 3, escreve_mocaccino
+    j verifica_tamanho
+
+escreve_cafe_puro:
+    la $a1, puro_str         # Ponteiro para a string "Cafe Puro"
+    li $a2, 10               # Número de bytes a serem escritos
+    syscall
+    j verifica_tamanho
+
+escreve_cafe_com_leite:
+    la $a1, leite_str        # Ponteiro para a string "Cafe com Leite"
+    li $a2, 15               # Número de bytes a serem escritos
+    syscall
+    j verifica_tamanho
+
+escreve_mocaccino:
+    la $a1, mocaccino_str    # Ponteiro para a string "Mocaccino"
+    li $a2, 10               # Número de bytes a serem escritos
+    syscall
+    j verifica_tamanho
+
+verifica_tamanho:
+    # Escreve o tamanho
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    beq $s5, 1, escreve_pequeno
+    beq $s5, 2, escreve_grande
+    j verifica_acucar
+
+escreve_pequeno:
+    la $a1, pequeno_str      # Ponteiro para a string "Pequeno"
+    li $a2, 8                # Número de bytes a serem escritos
+    syscall
+    j verifica_acucar
+
+escreve_grande:
+    la $a1, grande_str       # Ponteiro para a string "Grande"
+    li $a2, 7                # Número de bytes a serem escritos
+    syscall
+    j verifica_acucar
+
+verifica_acucar:
+    # Escreve se tem açúcar ou não
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    beq $s6, 1, escreve_sem_acucar
+    beq $s6, 2, escreve_com_acucar 
+    j imprime_preco
+
+escreve_sem_acucar:
+    la $a1, sem_acucar_str   # Ponteiro para a string "Sem Acucar"
+    li $a2, 11               # Número de bytes a serem escritos
+    syscall
+    j imprime_preco
+
+escreve_com_acucar:
+    la $a1, acucar_str       # Ponteiro para a string "Com Acucar"
+    li $a2, 11               # Número de bytes a serem escritos
+    syscall
+    j imprime_preco
+
+imprime_preco:
+    # Imprime o preço
+    li $v0, 15               # Syscall para escrever no arquivo
+    move $a0, $t0            # Descritor do arquivo
+    la $a1, valor_pago_str   # Ponteiro para a string "Valor Pago: R$ "
+    li $a2, 14               # Número de bytes a serem escritos
+    syscall
+
+    beq $s4, 1, preco_cafe_puro
+    beq $s4, 2, preco_cafe_com_leite
+    beq $s4, 3, preco_mocaccino
+    j fim
+
+preco_cafe_puro:
+    beq $s5, 1, preco_puro_pequeno
+    la $a1, preco_puro_grande_str  # Ponteiro para a string "5,00"
+    li $a2, 5                # Número de bytes a serem escritos
+    j imprime_preco_final
+
+preco_puro_pequeno:
+    la $a1, preco_puro_pequeno_str  # Ponteiro para a string "3,00"
+    li $a2, 5                # Número de bytes a serem escritos
+    j imprime_preco_final
+
+preco_cafe_com_leite:
+    beq $s5, 1, preco_leite_pequeno
+    la $a1, preco_leite_grande_str  # Ponteiro para a string "6,50"
+    li $a2, 5                # Número de bytes a serem escritos
+    j imprime_preco_final
+
+preco_leite_pequeno:
+    la $a1, preco_leite_pequeno_str  # Ponteiro para a string "4,50"
+    li $a2, 5                # Número de bytes a serem escritos
+    j imprime_preco_final
+
+preco_mocaccino:
+    beq $s5, 1, preco_mocaccino_pequeno
+    la $a1, preco_mocaccino_grande_str  # Ponteiro para a string "7,00"
+    li $a2, 5                # Número de bytes a serem escritos
+    j imprime_preco_final
+
+preco_mocaccino_pequeno:
+    la $a1, preco_mocaccino_pequeno_str  # Ponteiro para a string "5,00"
+    li $a2, 5                # Número de bytes a serem escritos
+    j imprime_preco_final
+
+imprime_preco_final:
     li $v0, 15               # Syscall para escrever no arquivo
     move $a0, $t0            # Descritor do arquivo
     syscall
 
-    # Verifica se a escrita foi bem-sucedida
-    bltz $v0, fechar_arquivo  # Se a escrita falhar, fecha o arquivo
-
-    # Passo 3: Escrever o tamanho no arquivo
-    la $t2, tamanho_tamanho   # Carrega o endereço do vetor de tamanhos dos tamanhos
-    sll $s5, $s5, 2           # Multiplica o índice do tamanho por 4 (4 bytes por palavra)
-    lw $t4, 0($t2)            # Carrega o tamanho do primeiro tamanho (Pequeno)
-    add $t5, $t1, $t4         # Calcula o endereço do tamanho selecionado
-    add $t5, $t5, $s5         # Ajusta o endereço conforme o índice
-    la $a1, ($t5)             # Carrega o endereço do tamanho
-    lw $a2, ($t2)             # Carrega o tamanho do tamanho
-    li $v0, 15                # Syscall para escrever no arquivo
-    move $a0, $t0             # Descritor do arquivo
+fim:
+    # Passo 3: Fechar o arquivo
+    li $v0, 16               # Syscall para fechar o arquivo
+    move $a0, $t0            # Descritor do arquivo
     syscall
 
-    # Verifica se a escrita foi bem-sucedida
-    bltz $v0, fechar_arquivo  # Se a escrita falhar, fecha o arquivo
+    jr $ra                   # Retorna ao chamador
 
-    # Passo 4: Escrever o adoçante no arquivo
-    la $t2, tamanho_acucar    # Carrega o endereço do vetor de tamanhos dos adoçantes
-    sll $s6, $s6, 2           # Multiplica o índice do adoçante por 4 (4 bytes por palavra)
-    lw $t4, 0($t2)            # Carrega o tamanho do primeiro adoçante (Sem Açúcar)
-    add $t5, $t1, $t4         # Calcula o endereço do adoçante selecionado
-    add $t5, $t5, $s6         # Ajusta o endereço conforme o índice
-    la $a1, ($t5)             # Carrega o endereço do adoçante
-    lw $a2, ($t2)             # Carrega o tamanho do adoçante
-    li $v0, 15                # Syscall para escrever no arquivo
-    move $a0, $t0             # Descritor do arquivo
+erro_abrir_arquivo:
+    # Imprime mensagem de erro
+    li $v0, 4
+    la $a0, erro_str
     syscall
 
-    # Verifica se a escrita foi bem-sucedida
-    bltz $v0, fechar_arquivo  # Se a escrita falhar, fecha o arquivo
-
-    # Passo 5: Fechar o arquivo
-fechar_arquivo:
-    li $v0, 16                # Syscall para fechar o arquivo
-    move $a0, $t0             # Descritor do arquivo
+    # Finaliza o programa
+    li $v0, 10               # Syscall para encerrar o programa
     syscall
 
-finalizar:
-    # Restaura $ra e volta
-    lw $ra, 0($sp)
-    addi $sp, $sp, 4
-    jr $ra
 
 # **************************************************************************************************************************************************
+
 REPOR_ESTOQUE:
     sw $ra, 0($sp)      # Salva $ra na pilha
     la $a0, ing_insuf_1
     li $v0, 4
     syscall
 
-    # Informa qual ingrediente está em falta
-    la $a0, prompt_cafe
-    li $v0, 4
-    syscall
 
     # Lê a senha do usuário
     la $a0, senha_prompt
@@ -377,6 +474,19 @@ retorno_contagem:
 
 SELECIONAR_BEBIDA:
     sw $ra, 0($sp)      # Salva $ra na pilha
+    
+    la  $a0, flush
+    li  $v0, 4 
+    syscall
+    
+    la  $a0, marca
+    li  $v0, 4
+    syscall
+    
+    la  $a0, precificacao
+    li  $v0, 4
+    syscall
+    
     la $a0, sel_beb
     li $v0, 4
     syscall
@@ -546,7 +656,7 @@ LER_TECLADO:
         
     delay_loop:                
         addi  $t4, $t4, 1    		# Incrementa o temporizador
-        bne  $t4, 100, delay_loop  	# Compara o temporizador
+        bne  $t4, 25, delay_loop  	# Compara o temporizador
     
         j  end_leitura
         
@@ -567,6 +677,7 @@ LER_TECLADO:
         jr 	$ra              	# Retorna para o chamador
 
 # **************************************************************************************************************************************************
+
 # **************************************************************************************************************************************************
 
 VERIFICAR_ESTOQUE:

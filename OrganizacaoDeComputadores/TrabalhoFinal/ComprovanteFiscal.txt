@@ -1,0 +1,11 @@
+CoffeeBreak - Seu Cafe Perfeito
+Endereco: Rua dos Aromas, 123 - Centro - CafeLandia
+Telefone: (48) 1234-5678
+CNPJ: 12.345.678/0001-90
+Obrigado por escolher CoffeeBreak!
+
+Seu pedido foi:
+Cafe Puro
+Pequeno
+Sem Acucar
+Valor Pago: R$3,00
