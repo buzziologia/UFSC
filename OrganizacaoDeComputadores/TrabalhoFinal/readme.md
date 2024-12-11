@@ -1,1 +1,1 @@
-![Manual da Máquina](images/ManualDaMaquina.png)
+![Manual da Máquina](ManualDaMaquina.png)
